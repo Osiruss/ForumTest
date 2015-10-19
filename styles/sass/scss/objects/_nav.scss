@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .nav {
-	min-height: 75px;
+	min-height: 50px;
 	background: $gray-light;
 	
 	a {
@@ -20,7 +20,7 @@
 
 	@include breakpoint($bp-small-3) {
 		max-height: none;
-		background: $scheme-3;
+		background: $scheme-1;
 		clear: none;
 
 		li {
@@ -31,8 +31,10 @@
 			border: 0;
 			padding: $pad/2 $pad;
 			font-size: $space*1.2;
-			background: $scheme-1;
 			color:lighten($primary, 80);
+			&:hover {
+				background: darken($scheme-1, 5);
+			}
 		}
 		
 	}

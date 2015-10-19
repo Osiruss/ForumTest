@@ -11,7 +11,8 @@
 .site-header {
 	nav section {
 		float: right;
-		font-weight: bold;
+		color:white;
+		font-size: 1.1em;
 		padding: $space $space-double;
 	}
 }
@@ -43,7 +44,7 @@ Latest activity block
 /* 
 Forum table styling --needs tidying up--
  */
-section>table {
+.forum--container {
 	a {
 		text-decoration: underline;
 	}
