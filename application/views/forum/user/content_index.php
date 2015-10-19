@@ -8,7 +8,7 @@
 			<p><?php echo $user->bio; ?></p>
 		</article>
 		<?php if ($this->is_admin || (isset($this->session->userdata()['id']) && $user->user_id == $this->session->userdata()['id'])) { ?>
-			<a class="btn edit_profile" href="<?php echo base_url('user/edit').'/'.$user->user_id; ?>">Edit profile</a>
+			<a class="btn edit--profile" href="<?php echo base_url('user/edit').'/'.$user->user_id; ?>">Edit profile</a>
 		<?php } ?>
 	</section>
 </div>
