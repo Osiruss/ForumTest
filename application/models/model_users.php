@@ -121,7 +121,7 @@ class Model_Users extends MY_Model {
 			return false;
 		} else {
 			//get information on image
-			$data = $this->upload->data();
+			var_dump($data = $this->upload->data());
 
 			//set relevant information for storage and settings of information
 			$config['image_library'] = 'gd2';
