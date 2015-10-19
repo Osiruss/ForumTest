@@ -23,9 +23,9 @@ class Post extends MY_Controller {
 		//get subject of individual post's thread
 		$this->data->subject = $this->model_threads->get($this->data->post->thread_id)->subject;
 
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/post/content_post');
-		$this->load->view('site_footer');			
+		$this->load->view('templates/site_footer');			
 	}
 
 	public function new_post() {
@@ -65,9 +65,9 @@ class Post extends MY_Controller {
 			redirect('thread/'.$tid.$page_num.'#'.$new_pid, 'refresh');
 		}
 
-		$this->load->view('site_header');
+		$this->load->view('templates/site_header');
 		$this->load->view('forum/post/content_'.$this->method);
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 
 	public function edit_post() {
@@ -125,9 +125,9 @@ class Post extends MY_Controller {
 		//get thread data
 		$this->data->thread = $this->model_threads->get($tid);
 		
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/post/content_'.$this->method);
-		$this->load->view('site_footer');			
+		$this->load->view('templates/site_footer');			
 	}
 
 	public function delete_post() {
@@ -165,9 +165,9 @@ class Post extends MY_Controller {
 		//thread id used to redriect should the user choose not to delete
 		$this->data->tid = $post_data->thread_id;
 
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/post/content_'.$this->method);
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 
 }

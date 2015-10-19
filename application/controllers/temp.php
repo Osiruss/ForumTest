@@ -21,8 +21,8 @@ class Temp extends MY_Controller {
 			$this->session->set_flashdata('error','<p>Invalid or expired activation link. Please try resending another by attempting to login.</p>');
 		}
 
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/user/content_temp');
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 }

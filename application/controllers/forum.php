@@ -66,9 +66,9 @@ class Forum extends MY_Controller {
 
 		//get list of users active in the last xxx minutes
 		$this->data->latest_activity = $this->model_users->last_activity($this->data->activity_limit);
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/content_'.$this->method);
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 
 	public function board() {
@@ -124,8 +124,8 @@ class Forum extends MY_Controller {
 		//get breadcrumbs of specific forum. i.e. parent forums
 		$this->data->breadcrumbs = $this->model_forum->breadcrumbs($fid);
 		$this->data->fid = $fid;
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/content_'.$this->method);
-		$this->load->view('site_footer');
+		$this->load->view('templates/site_footer');
 	}
 }

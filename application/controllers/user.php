@@ -11,9 +11,9 @@ class User extends MY_Controller {
 		}
 		$this->data->user = $this->model_users->get($uid);
 
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/user/content_'.$this->method);
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 
 	public function edit_user() {
@@ -40,8 +40,8 @@ class User extends MY_Controller {
 			redirect('user/'.$uid, 'refresh');
 		}
 
-		$this->load->view('site_header', $this->data);
+		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/user/content_'.$this->method);
-		$this->load->view('site_footer');	
+		$this->load->view('templates/site_footer');	
 	}
 }
