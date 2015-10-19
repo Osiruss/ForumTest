@@ -84,7 +84,7 @@ class MY_Model extends CI_Model {
 	}
 
 	/**
-	 * Delete row
+	 * Delete row by $id
 	 * @param  integer $id id of row to be deleted
 	 */
 	public function delete($id){
@@ -142,7 +142,7 @@ class MY_Model extends CI_Model {
 	}
 
 	/**
-	 * Return users active within last specified minutes
+	 * Return users active within parameter minutes
 	 * @param  integer $minutes minutes to guage actiity in
 	 * @return object          users active
 	 */
@@ -157,7 +157,7 @@ class MY_Model extends CI_Model {
 
 
 	/**
-	 * Get time expired since entered time
+	 * Get time expired since parameter time
 	 * @param  datetime $t time to be compared with current datetime
 	 * @return object    formatted difference of time (3 hours ago, etc)
 	 */
