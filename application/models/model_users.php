@@ -121,7 +121,7 @@ class Model_Users extends MY_Model {
 			return false;
 		} else {
 			//get information on image
-			var_dump($data = $this->upload->data());
+			$data = $this->upload->data();
 
 			//set relevant information for storage and settings of information
 			$config['image_library'] = 'gd2';
@@ -149,11 +149,15 @@ class Model_Users extends MY_Model {
 				}
 			}	 		
 
+			//if resize does not succeed, display errors
 			if ( ! $this->image_lib->resize()) {
 			    $this->data->error = $this->image_lib->display_errors();
 			    return false;
 			} else {
+				//delete original file
 				unlink('./img/temp/'.$data['file_name']);
+
+				//save image reference
 				$this->save(array('avatar'=>$uid.'_thumb'.$data['file_ext']), $uid);
 				return true;
 			}
