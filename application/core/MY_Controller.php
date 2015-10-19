@@ -42,4 +42,10 @@ class MY_Controller extends CI_Controller {
 		$this->post_limit = 5;
 	}
 
+	public function render($f) {
+		$this->load->view('templates/site_header', $this->data);
+		$this->load->view($f);
+		$this->load->view('templates/site_footer');
+	}
+
 }

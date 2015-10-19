@@ -78,9 +78,9 @@ class Thread extends MY_Controller {
 
 		$this->data->tid = $tid;
 		$this->data->subject = $this->model_threads->get_by(array('thread_id'=>$tid), true)->subject;
-		$this->load->view('templates/site_header', $this->data);
-		$this->load->view('forum/thread/content_thread');
-		$this->load->view('templates/site_footer');		
+
+		//render view
+		$this->render('forum/thread/content_thread');
 	}
 
 	public function new_thread() {
@@ -122,9 +122,8 @@ class Thread extends MY_Controller {
 			redirect('thread/'.$tid, 'refresh');
 		}
 
-		$this->load->view('templates/site_header');
-		$this->load->view('forum/thread/content_'.$this->method);
-		$this->load->view('templates/site_footer');	
+		//render view
+		$this->render('forum/thread/content_'.$this->method);
 	}
 
 }

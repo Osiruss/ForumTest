@@ -25,9 +25,8 @@ class Site extends MY_Controller {
 			$this->data->posts[$i]->ago = reset($obj);
 		}
 
-		$this->load->view('templates/site_header', $this->data);
-		$this->load->view('content_home');
-		$this->load->view('templates/site_footer');
+		//render view
+		$this->render('content_home');
 	}
 
 	public function login() {
@@ -74,9 +73,8 @@ class Site extends MY_Controller {
 			$this->session->set_flashdata('redirect', $redirect);
 		}
 
-		$this->load->view('templates/site_header', $this->data);
-		$this->load->view('content_'.$this->method);
-		$this->load->view('templates/site_footer');
+		//render view
+		$this->render('content_'.$this->method);
 	}
 
 	public function logout() {
@@ -118,9 +116,8 @@ class Site extends MY_Controller {
 			redirect('site/register','refresh');
 		}
 
-		$this->load->view('templates/site_header');
-		$this->load->view('content_'.$this->method);
-		$this->load->view('templates/site_footer');
+		//render view
+		$this->render('content_'.$this->method);
 	}
 
 	public function username_check() {
@@ -134,8 +131,7 @@ class Site extends MY_Controller {
 	}
 
 	public function not_found() {
-		$this->load->view('templates/site_header');
-		$this->load->view('content_404');
-		$this->load->view('templates/site_footer');
+		//render view
+		$this->render('content_404');
 	}
 }

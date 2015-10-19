@@ -21,6 +21,7 @@ class Forum extends MY_Controller {
 			for ($l=0; $l < count($forums); $l++) { 
 
 				//if forum group id matches a group id add to array
+				//used to group forums before outputting to view
 				if ($forum_groups[$i]->forum_group_id == $forums[$l]->forum_group_id) {
 					$forum_groups[$i]->forums[] = $forums[$l];
 				}
@@ -32,6 +33,7 @@ class Forum extends MY_Controller {
 
 			//for each forum
 			for ($i=0; $i < count($forum_groups[$l]->forums);$i++) { 
+
 				//get forum id
 				$fid = $forum_groups[$l]->forums[$i]->forum_id;
 
@@ -43,7 +45,7 @@ class Forum extends MY_Controller {
 				$forum_groups[$l]->forums[$i]->thread_count = $this->model_threads->get_by($arr, true)->count;
 
 				//count number of posts in specific forum by joining post table
-				//joined on threadid to get posts from specific threads from specific forum
+				//joined on thread_id to get posts from specific threads from specific forum
 				$this->db->select('COUNT(posts.post_id) as post_count');
 				$this->db->join('posts','posts.thread_id = threads.thread_id');
 				$forum_groups[$l]->forums[$i]->post_count = $this->model_threads->get_by($arr, true)->post_count;
@@ -55,6 +57,7 @@ class Forum extends MY_Controller {
 				$this->db->order_by('posts.posted_on DESC');
 				$forum_groups[$l]->forums[$i]->latest = $this->model_threads->get_by($arr, true);
 
+				//if there are no posts in the specific forum, do not continue
 				if ($forum_groups[$l]->forums[$i]->latest != null) {
 					$obj = $this->model_posts->time_expired($forum_groups[$l]->forums[$i]->latest->posted_on);
 					$forum_groups[$l]->forums[$i]->latest->ago = reset($obj);
@@ -66,9 +69,9 @@ class Forum extends MY_Controller {
 
 		//get list of users active in the last xxx minutes
 		$this->data->latest_activity = $this->model_users->last_activity($this->data->activity_limit);
-		$this->load->view('templates/site_header', $this->data);
-		$this->load->view('forum/content_'.$this->method);
-		$this->load->view('templates/site_footer');	
+
+		//render view
+		$this->render('forum/content_'.$this->method);	
 	}
 
 	public function board() {
@@ -97,6 +100,7 @@ class Forum extends MY_Controller {
 
 		//for every thread
 		for ($i=0; $i < count($this->data->threads); $i++) { 
+
 			//get thread id
 			$tid = $this->data->threads[$i]->thread_id;
 
@@ -115,6 +119,7 @@ class Forum extends MY_Controller {
 			$this->db->join('posts', 'posts.thread_id = threads.thread_id');
 			$this->data->threads[$i]->post_count = $this->model_threads->get_by($arr, true)->post_count;
 
+			//if there are no posts in the specific forum, do not continue
 			if ($this->data->threads[$i]->latest != null) {
 				$obj = $this->model_threads->time_expired($this->data->threads[$i]->latest->posted_on);
 				$this->data->threads[$i]->latest->ago = reset($obj);
@@ -124,8 +129,8 @@ class Forum extends MY_Controller {
 		//get breadcrumbs of specific forum. i.e. parent forums
 		$this->data->breadcrumbs = $this->model_forum->breadcrumbs($fid);
 		$this->data->fid = $fid;
-		$this->load->view('templates/site_header', $this->data);
-		$this->load->view('forum/content_'.$this->method);
-		$this->load->view('templates/site_footer');
+
+		//render view
+		$this->render('forum/content_'.$this->method);
 	}
 }
