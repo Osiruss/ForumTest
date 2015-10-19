@@ -36,7 +36,7 @@ if ($('textarea[name=message]').length) {
 		};
 	};
 }
-
+ 
 if ($('input[name=subject]').length) {
 	console.log('hi');
 }
