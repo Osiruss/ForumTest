@@ -6,10 +6,14 @@ class User extends MY_Controller {
 	}
 
 	public function index() {
+		//if user_id is not set in uri, redirect
 		if (!$uid = $this->uri->segment(2)) {
 			redirect('forum');
 		}
-		$this->data->user = $this->model_users->get($uid);
+
+		if (!$this->data->user = $this->model_users->get($uid)) {
+			redirect('404');
+		}
 
 		$this->load->view('templates/site_header', $this->data);
 		$this->load->view('forum/user/content_'.$this->method);
