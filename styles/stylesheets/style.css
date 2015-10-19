@@ -1862,14 +1862,14 @@ td {
   padding-bottom: 15px;
 }
 
-/* line 11, ../sass/scss/_styleguide.scss */
+/* line 12, ../sass/scss/_styleguide.scss */
 .site-header nav section {
   float: right;
   font-weight: bold;
   padding: 1em 2em;
 }
 
-/* line 16, ../sass/scss/_styleguide.scss */
+/* line 18, ../sass/scss/_styleguide.scss */
 .site-banner {
   display: block;
   padding: 25% 0;
@@ -1877,27 +1877,23 @@ td {
   background-size: cover;
 }
 
-/* line 22, ../sass/scss/_styleguide.scss */
+/* line 24, ../sass/scss/_styleguide.scss */
 .site-article {
   padding: 2em;
   margin-bottom: 1em;
   background: white;
   text-align: left;
 }
-/* line 28, ../sass/scss/_styleguide.scss */
-.site-article.product-item h1 {
-  font-size: 1em;
-}
 
 /* 
 Latest activity block
  */
-/* line 36, ../sass/scss/_styleguide.scss */
+/* line 34, ../sass/scss/_styleguide.scss */
 .latest_activity {
   background: #e3dea3;
   padding: 0.5em;
 }
-/* line 39, ../sass/scss/_styleguide.scss */
+/* line 37, ../sass/scss/_styleguide.scss */
 .latest_activity h1 {
   font-size: 1.1em;
   padding-bottom: 0;
@@ -1906,56 +1902,52 @@ Latest activity block
 /* 
 Forum table styling --needs tidying up--
  */
-/* line 48, ../sass/scss/_styleguide.scss */
+/* line 46, ../sass/scss/_styleguide.scss */
 section > table {
   margin: 1% 0;
   border: 1px solid #046380;
 }
-/* line 49, ../sass/scss/_styleguide.scss */
+/* line 47, ../sass/scss/_styleguide.scss */
 section > table a {
   text-decoration: underline;
 }
-/* line 56, ../sass/scss/_styleguide.scss */
+/* line 54, ../sass/scss/_styleguide.scss */
 section > table thead tr {
   background: #d7d07c;
   border-bottom: 1px solid black;
 }
-/* line 60, ../sass/scss/_styleguide.scss */
+/* line 58, ../sass/scss/_styleguide.scss */
 section > table thead th {
   padding: 10px 0;
   font-size: 1.2em;
 }
-/* line 67, ../sass/scss/_styleguide.scss */
+/* line 65, ../sass/scss/_styleguide.scss */
 section > table > tbody > td {
   padding-top: 1.5em;
 }
-/* line 71, ../sass/scss/_styleguide.scss */
+/* line 69, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(odd) a:hover {
   color: #A7A37E;
 }
-/* line 74, ../sass/scss/_styleguide.scss */
+/* line 72, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(odd) a.btn:hover {
   color: white;
 }
-/* line 78, ../sass/scss/_styleguide.scss */
+/* line 76, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(even) {
   background: #E6E2AF;
 }
-/* line 83, ../sass/scss/_styleguide.scss */
+/* line 81, ../sass/scss/_styleguide.scss */
 section > table .forum--group-title th {
   background: #d7d07c;
   font-size: 1.4em;
   padding: 0.25em;
 }
-/* line 89, ../sass/scss/_styleguide.scss */
+/* line 87, ../sass/scss/_styleguide.scss */
 section > table .forum--empty {
   padding: 10px;
 }
-/* line 92, ../sass/scss/_styleguide.scss */
-section > table .forum--hide {
-  display: none;
-}
-/* line 95, ../sass/scss/_styleguide.scss */
+/* line 90, ../sass/scss/_styleguide.scss */
 section > table .forum--title {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1967,26 +1959,26 @@ section > table .forum--title {
   margin-left: 0;
   padding-left: 10px;
 }
-/* line 96, ../sass/scss/_styleguide.scss */
+/* line 91, ../sass/scss/_styleguide.scss */
 section > table .forum--title a {
   text-decoration: none;
 }
-/* line 102, ../sass/scss/_styleguide.scss */
+/* line 97, ../sass/scss/_styleguide.scss */
 section > table .forum--title a {
   display: block;
   padding: 1.5em 1em;
 }
-/* line 107, ../sass/scss/_styleguide.scss */
+/* line 102, ../sass/scss/_styleguide.scss */
 section > table td.forum--title {
   padding: 0;
   line-height: 1;
 }
-/* line 110, ../sass/scss/_styleguide.scss */
+/* line 105, ../sass/scss/_styleguide.scss */
 section > table td.forum--title span {
   font-size: 0.8em;
   font-style: italic;
 }
-/* line 115, ../sass/scss/_styleguide.scss */
+/* line 110, ../sass/scss/_styleguide.scss */
 section > table .forum--latest {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1996,12 +1988,12 @@ section > table .forum--latest {
   padding-left: 1.38889%;
   padding-right: 1.38889%;
 }
-/* line 118, ../sass/scss/_styleguide.scss */
+/* line 113, ../sass/scss/_styleguide.scss */
 section > table td.forum--latest, section > table td.forum--stats, section > table td.forum--author, section > table .forum--meta {
   font-size: 0.9em;
 }
 @media (min-width: 46.8em) {
-  /* line 124, ../sass/scss/_styleguide.scss */
+  /* line 119, ../sass/scss/_styleguide.scss */
   section > table.index .forum--title {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2011,11 +2003,11 @@ section > table td.forum--latest, section > table td.forum--stats, section > tab
     padding-left: 1.38889%;
     padding-right: 1.38889%;
   }
-  /* line 127, ../sass/scss/_styleguide.scss */
+  /* line 122, ../sass/scss/_styleguide.scss */
   section > table.index .forum--stats, section > table.index .forum--author {
     text-align: center;
   }
-  /* line 131, ../sass/scss/_styleguide.scss */
+  /* line 126, ../sass/scss/_styleguide.scss */
   section > table .forum--title {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2025,7 +2017,7 @@ section > table td.forum--latest, section > table td.forum--stats, section > tab
     padding-left: 1.38889%;
     padding-right: 1.38889%;
   }
-  /* line 134, ../sass/scss/_styleguide.scss */
+  /* line 129, ../sass/scss/_styleguide.scss */
   section > table .forum--stats {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2036,7 +2028,7 @@ section > table td.forum--latest, section > table td.forum--stats, section > tab
     padding-right: 1.38889%;
     text-align: right;
   }
-  /* line 138, ../sass/scss/_styleguide.scss */
+  /* line 133, ../sass/scss/_styleguide.scss */
   section > table .forum--author {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2047,7 +2039,7 @@ section > table td.forum--latest, section > table td.forum--stats, section > tab
     padding-right: 1.38889%;
     text-align: center;
   }
-  /* line 142, ../sass/scss/_styleguide.scss */
+  /* line 137, ../sass/scss/_styleguide.scss */
   section > table .forum--latest {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2057,24 +2049,20 @@ section > table td.forum--latest, section > table td.forum--stats, section > tab
     padding-left: 1.38889%;
     padding-right: 1.38889%;
   }
-  /* line 145, ../sass/scss/_styleguide.scss */
-  section > table .forum--hide {
-    display: table-cell;
-  }
 }
 
 /* 
 Posts
  */
-/* line 155, ../sass/scss/_styleguide.scss */
+/* line 147, ../sass/scss/_styleguide.scss */
 .post .post--meta {
   color: #A7A37E;
 }
-/* line 158, ../sass/scss/_styleguide.scss */
+/* line 150, ../sass/scss/_styleguide.scss */
 .post .post--permalink {
   float: right;
 }
-/* line 161, ../sass/scss/_styleguide.scss */
+/* line 153, ../sass/scss/_styleguide.scss */
 .post .post--message {
   background: white;
   min-height: 250px;
@@ -2086,11 +2074,11 @@ Posts
   padding-left: 1.38889%;
   padding-right: 1.38889%;
 }
-/* line 165, ../sass/scss/_styleguide.scss */
+/* line 157, ../sass/scss/_styleguide.scss */
 .post .post--message td {
   text-align: left;
 }
-/* line 169, ../sass/scss/_styleguide.scss */
+/* line 161, ../sass/scss/_styleguide.scss */
 .post .post--author {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2103,17 +2091,29 @@ Posts
   background: #EFECCA;
   margin: 0;
 }
-/* line 175, ../sass/scss/_styleguide.scss */
+/* line 167, ../sass/scss/_styleguide.scss */
 .post .post--author figure img {
   max-height: 150px;
 }
+@media (min-width: 24em) {
+  /* line 174, ../sass/scss/_styleguide.scss */
+  .post .post--message {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+}
 
-/* line 182, ../sass/scss/_styleguide.scss */
+/* line 179, ../sass/scss/_styleguide.scss */
 .post--edit {
   height: 40px;
   border-bottom: 1px solid #002F2F;
 }
-/* line 185, ../sass/scss/_styleguide.scss */
+/* line 182, ../sass/scss/_styleguide.scss */
 .post--edit .btn {
   float: right;
   width: auto;
@@ -2121,20 +2121,20 @@ Posts
 }
 
 /* 
-Thread hiding
+Block hiding
  */
-/* line 196, ../sass/scss/_styleguide.scss */
-.thread .forum--hide {
+/* line 192, ../sass/scss/_styleguide.scss */
+.forum--hide {
   display: none;
 }
-@media (min-width: 24em) {
-  /* line 201, ../sass/scss/_styleguide.scss */
-  .thread .forum--hide {
+
+@media (min-width: 46.8em) {
+  /* line 197, ../sass/scss/_styleguide.scss */
+  .forum--hide {
     display: table-cell;
   }
 }
-
-/* line 206, ../sass/scss/_styleguide.scss */
+/* line 201, ../sass/scss/_styleguide.scss */
 html.ielt9 table .forum--hide {
   display: block;
 }
@@ -2142,7 +2142,7 @@ html.ielt9 table .forum--hide {
 /* 
 Pagination
  */
-/* line 214, ../sass/scss/_styleguide.scss */
+/* line 209, ../sass/scss/_styleguide.scss */
 .pagination, .btn-new {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2153,7 +2153,7 @@ Pagination
   padding-right: 1.38889%;
   margin-bottom: 1em;
 }
-/* line 217, ../sass/scss/_styleguide.scss */
+/* line 212, ../sass/scss/_styleguide.scss */
 .pagination .btn, .btn-new .btn {
   float: right;
 }
@@ -2161,12 +2161,12 @@ Pagination
 /* 
 Profile
  */
-/* line 228, ../sass/scss/_styleguide.scss */
+/* line 223, ../sass/scss/_styleguide.scss */
 .profile figure img {
   max-height: 200px;
 }
 @media (min-width: 24em) {
-  /* line 227, ../sass/scss/_styleguide.scss */
+  /* line 222, ../sass/scss/_styleguide.scss */
   .profile figure {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2178,7 +2178,7 @@ Profile
   }
 }
 @media (min-width: 46.8em) {
-  /* line 227, ../sass/scss/_styleguide.scss */
+  /* line 222, ../sass/scss/_styleguide.scss */
   .profile figure {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2190,7 +2190,7 @@ Profile
   }
 }
 @media (min-width: 24em) {
-  /* line 238, ../sass/scss/_styleguide.scss */
+  /* line 233, ../sass/scss/_styleguide.scss */
   .profile article {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2202,7 +2202,7 @@ Profile
   }
 }
 @media (min-width: 46.8em) {
-  /* line 238, ../sass/scss/_styleguide.scss */
+  /* line 233, ../sass/scss/_styleguide.scss */
   .profile article {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2213,7 +2213,7 @@ Profile
     padding-right: 1.38889%;
   }
 }
-/* line 246, ../sass/scss/_styleguide.scss */
+/* line 241, ../sass/scss/_styleguide.scss */
 .profile .edit_profile {
   clear: both;
   -moz-box-sizing: border-box;

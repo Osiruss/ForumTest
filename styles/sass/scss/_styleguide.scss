@@ -8,10 +8,12 @@
 		padding-bottom: 15px;
 	}
 }
-.site-header nav section {
-	float: right;
-	font-weight:bold;
-	padding: $space $space-double;
+.site-header {
+	nav section {
+		float: right;
+		font-weight:bold;
+		padding: $space $space-double;
+	}
 }
 .site-banner {
 	display: block;
@@ -24,11 +26,6 @@
 	margin-bottom: $space;
 	background: lighten($primary, 100);
 	text-align:left;
-	&.product-item {
-		h1 {
-			font-size: $font-size-med;
-		}
-	}
 }
 
 /* 
@@ -90,9 +87,6 @@ section>table {
 	.forum--empty {
 		padding: 10px;
 	}
-	.forum--hide {
-		display: none;
-	}
 	.forum--title {
 		a {
 			text-decoration: none;
@@ -143,9 +137,6 @@ section>table {
 		.forum--latest {
 			@include span(2 of 12);
 		}
-		.forum--hide {
-			display:table-cell;
-		}
 	}
 }
 
@@ -179,6 +170,11 @@ Posts
 		}
 	}
 
+	@include breakpoint($bp-small) {
+		.post--message {
+			@include span(8 of 12);
+		}
+	}
 }
 .post--edit {
 	height: 40px;
@@ -191,19 +187,17 @@ Posts
 }
 
 /* 
-Thread hiding
+Block hiding
  */
-.thread {
-	.forum--hide {
-		display:none;
-	}
+.forum--hide {
+	display:none;
+}
 
-	@include breakpoint($bp-small) {
-		.forum--hide {
-			display:table-cell;
-		}
+@include breakpoint($bp-med) {
+	.forum--hide {
+		display:table-cell;
 	}
-} 
+}
 html.ielt9 table .forum--hide {
 	display: block;
 }
