@@ -5,7 +5,7 @@
 		<div class="btn-new">
 			<a class="btn" href="<?php echo base_url('thread/new').'/'.$fid ?>">Create thread</a>
 		</div>
-		<table class="board">
+		<table class="board forum--container">
 			<thead>
 				<tr>
 					<th class="forum--title">Thread</th>

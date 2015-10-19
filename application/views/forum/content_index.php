@@ -1,6 +1,6 @@
 <div class="site-container">
 <section>
-	<table class="index">
+	<table class="index forum--container">
 		<thead>
 			<tr>
 				<th class="forum--title"></th>
