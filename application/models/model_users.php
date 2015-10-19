@@ -40,16 +40,16 @@ class Model_Users extends MY_Model {
 			)
 		);
 
-	public function login() {
+	public function login($arr) {
 		$user = $this->get_by(array(
-			'username'=> $this->input->post('username')
+			'username'=> $arr['username']
 			), true);
 		$u = $p = $a = false;
 		
 		if (count($user)) {
 			$u = true;
 		}
-		if ($u && $this->encrypt->decode($user->pass) === $this->input->post('password')) {
+		if ($u && $this->encrypt->decode($user->pass) === $arr['password']) {
 			$p = true;
 		}
 		if ($u && $p && $user->active == 1) {
@@ -112,14 +112,18 @@ class Model_Users extends MY_Model {
 	public function create_thumb($uid) {
 		$config['upload_path'] = 'img/temp/';
 		$config['allowed_types'] = 'jpg|png|gif';
-		$config['max_size'] = '1000';
+		$config['max_size'] = '100';
 		$this->load->library('upload',$config);
 
+		//if upload is not sucessful, display errors
 		if (!$this->upload->do_upload('avatar')) {
 			$this->data->error = $this->upload->display_errors();
-			return false;			
+			return false;
 		} else {
+			//get information on image
 			$data = $this->upload->data();
+
+			//set relevant information for storage and settings of information
 			$config['image_library'] = 'gd2';
 			$config['source_image']	= './img/temp/'.$data['file_name'];
 			$config['new_image']	= './img/thumb/'.$uid.$data['file_ext'];
@@ -128,10 +132,18 @@ class Model_Users extends MY_Model {
 			$config['width']	= 200;
 			$config['height']	= 200;
 	 		$this->load->library('image_lib', $config); 
+
+	 		//get files in thumb directory
 			$dir = scandir('./img/thumb');
 
+			//for every image in thumb dir
 			for ($i=0; $i < count($dir); $i++) { 
+
+				//extract id from filename
 				$f = str_replace(array('_thumb','.jpg','.png','.gif'), '', $dir[$i]);
+
+				//if filename id matches user_id, delete said file
+				//this is to prevent duplicate files for the same user with different extensions
 				if ($f == $uid) {
 					unlink('./img/thumb/'.$dir[$i]);
 				}
@@ -141,7 +153,6 @@ class Model_Users extends MY_Model {
 			    $this->data->error = $this->image_lib->display_errors();
 			    return false;
 			} else {
-
 				unlink('./img/temp/'.$data['file_name']);
 				$this->save(array('avatar'=>$uid.'_thumb'.$data['file_ext']), $uid);
 				return true;

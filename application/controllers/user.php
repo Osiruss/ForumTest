@@ -38,9 +38,20 @@ class User extends MY_Controller {
 		//set validation rules
 		$this->form_validation->set_rules('bio','Bio','trim|htmlentities|min_length[5]|max_length[500]');
 
-		if ($this->form_validation->run()!=false) {
-			//create avatar sized image from file, deletes original
-			$this->model_users->create_thumb($uid);
+		$check = true;
+		//if file name is not empty continue
+		if (!empty($_FILES['avatar']['name'])) {
+
+			//if thumb creation/validation fails, $check to false. if $check is false, do not run validation on bio.
+			//$check defaults to true so if file is not set, continue on with Bio validation
+			if (!$this->model_users->create_thumb($uid)) {
+				$check = false;
+			}
+
+		}
+
+		//if image check rings true, continue with validation on Bio
+		if ($check && $this->form_validation->run()!=false) {
 
 			//saves bio data to database
 			$this->model_users->save(array('bio'=>$this->input->post('bio')), $this->data->user->user_id);
