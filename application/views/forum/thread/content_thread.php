@@ -12,8 +12,8 @@
 		<table class="thread">
 			<tbody>
 				<?php for ($i=0; $i < count($posts); $i++) { ?>
-				<tr class="table--post" id='<?php echo $posts[$i]->post_id; ?>'>
-					<td class="table__field--thread-author">
+				<tr class="post" id='<?php echo $posts[$i]->post_id; ?>'>
+					<td class="post--author">
 						<?php echo '<a href="'.base_url('user').'/'.$posts[$i]->user_id.'">'.$posts[$i]->username.'</a>'; ?>
 						<figure>
 							<a href="<?php echo base_url('user').'/'.$posts[$i]->user_id; ?>">
@@ -23,15 +23,15 @@
 						</figure>
 
 					</td>
-					<td class="table__field--thread-message">
+					<td class="post--message">
 						<table>
-							<tr class="table__field--meta">
+							<tr class="post--meta">
 								<td><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>"><?php echo date("jS F g:ia",strtotime($posts[$i]->posted_on)); ?></a></td>
-								<td class="table__field--permalink table__field--hide"><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>">Permalink</a></td>
+								<td class="post--permalink table__field--hide"><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>">Permalink</a></td>
 							</tr>
-							<tr class="table__field"><td><?php echo nl2br($posts[$i]->message); ?></td></tr>
+							<tr><td><?php echo nl2br($posts[$i]->message); ?></td></tr>
 						</table>
-						<tr class="table__field--edit">
+						<tr class="post--edit">
 							<td>
 					<?php if ($this->model_users->loggedin() &&
 					 ($posts[$i]->user_id == $this->session->userdata('id') || $this->model_users->is_admin())) { ?>	

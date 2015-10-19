@@ -1,40 +1,40 @@
 <div class="site-container">
 <section>
-	<table class="forum-index index">
+	<table class="index">
 		<thead>
 			<tr>
-				<th class="table__field--title"></th>
-				<th class="table__field--stats table__field--hide">Stats</th>
-				<th class="table__field--latest">Latest</th>
+				<th class="forum--title"></th>
+				<th class="forum--stats forum--hide">Stats</th>
+				<th class="forum--latest">Latest</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php 
 		for ($i=0; $i < count($forum_grouping); $i++) { ?>
-			<tr class="table__field--group-title">
+			<tr class="forum--group-title">
 				<th><?php echo $forum_grouping[$i]->title; ?></th>
 			</tr>
 		<?php for($l=0; $l < count($forum_grouping[$i]->forums); $l++) { 
 			$forums = $forum_grouping[$i]->forums[$l];
 			?>
 			<tr>
-				<td class="table__field--title">
+				<td class="forum--title">
 					<a href="<?php echo base_url('board/'.$forums->forum_id); ?>">
 						<strong><?php echo $forums->title; ?></strong><br>
 						<span><?php echo $forums->description; ?></span>
 					</a>
 				</td>
-				<td class="table__field--stats table__field--hide">
+				<td class="forum--stats forum--hide">
 					<?php echo $forums->thread_count; ?> <?php echo $forums->thread_count>1 || $forums->thread_count == 0 ? 'topics' : 'topic'; ?><br>
 					<?php echo $forums->post_count; ?> <?php echo $forums->post_count>1 || $forums->post_count == 0 ? 'replies' : 'reply'; ?>
 				</td>
-				<td class="table__field--latest">
+				<td class="forum--latest">
 					<?php if ($forums->latest === null) {
 						echo 'None';
 					} else { ?>
 						<?php $page_num = $this->model_posts->get_page_num($forums->latest->post_id); ?>
 						<?php $page_num = $page_num>1 ? '/'.$page_num : ''; ?>
-						<a href='<?php echo base_url('thread/'.$forums->latest->thread_id.$page_num.'#'.$forums->latest->post_id); ?>'><?php echo date("jS M g:ia",strtotime($forums->latest->posted_on)); ?></a><br>By 
+						<a href='<?php echo base_url('thread/'.$forums->latest->thread_id.$page_num.'#'.$forums->latest->post_id); ?>'><?php echo $forums->latest->ago; ?> ago</a><br>By 
 						<a href="<?php echo base_url('user').'/'.$forums->latest->user_id?>">
 							<?php echo $forums->latest->username?>
 						</a> 

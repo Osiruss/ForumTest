@@ -31,6 +31,9 @@
 	}
 }
 
+/* 
+Latest activity block
+ */
 .latest_activity {
 	background: darken($scheme-3, 10);
 	padding:$space-half;
@@ -40,12 +43,20 @@
 	}
 }
 
+/* 
+Forum table styling --needs tidying up--
+ */
 section>table {
+	a {
+		text-decoration: underline;
+	}
 	margin: 1% 0;
 	border: 1px solid $scheme-1;
+
 	thead {
 		tr {
-			background: $scheme-5!important;
+			background: darken($scheme-3, 20);
+			border-bottom:1px solid black;
 		}
 		th {
 			padding: 10px 0;
@@ -64,35 +75,28 @@ section>table {
 			a.btn:hover {
 				color:white;
 			}
-			background: white;
 		}
 		>tr:nth-child(even) {
 			background: $scheme-5;
 		}
 	}
-	
-	table {
-		.table__field--meta {
-			color: $scheme-4;
-			.table__field--permalink {
-				float: right;
-			}
-		}
-	}
-	.table__field--group-title {
+	.forum--group-title {
 		th {
 			background: darken($scheme-3, 20);
 			font-size: 1.4em;
 			padding:$space-half/2;
 		}
 	}
-	.table__field--empty {
+	.forum--empty {
 		padding: 10px;
 	}
-	.table__field--hide {
+	.forum--hide {
 		display: none;
 	}
-	.table__field--title {
+	.forum--title {
+		a {
+			text-decoration: none;
+		}
 		@include span(9 of 12);
 		margin-left: 0;
 		padding-left: 10px;
@@ -101,7 +105,7 @@ section>table {
 			padding: $space*1.5 $space;
 		}
 	}
-	td.table__field--title {
+	td.forum--title {
 		padding: 0;
 		line-height: 1;
 		span {
@@ -109,66 +113,53 @@ section>table {
 			font-style: italic;
 		}
 	}
-	.table__field--latest {
+	.forum--latest {
 		@include span(3 of 12);
 	}
-	td.table__field--latest, td.table__field--stats, td.table__field--author, .table__field--meta {
+	td.forum--latest, td.forum--stats, td.forum--author, .forum--meta {
 		font-size: 0.9em;
 	}
 	
 	@include breakpoint($bp-med) {
-		&.forum {
-			.table__field--title {
-				@include span(6 of 12);
+		&.index {
+			.forum--title {
+				@include span(8 of 12);
 			}
-			.table__field--stats, .table__field--author {
+			.forum--stats, .forum--author {
 				text-align: center;
 			}
 		}
-		.table__field--title {
-			@include span(8 of 12);
+		.forum--title {
+			@include span(6 of 12);
 		}
-		.table__field--stats {
+		.forum--stats {
 			@include span(2 of 12);
 			text-align: right;
 		}
-		.table__field--author {
+		.forum--author {
 			@include span(2 of 12);
 			text-align: center;
 		}
-		.table__field--latest {
+		.forum--latest {
 			@include span(2 of 12);
 		}
-		.table__field--hide {
+		.forum--hide {
 			display:table-cell;
 		}
 	}
 }
 
-.thread {
-	.table--post {
-		background: #EFECCA;
+/* 
+Posts
+ */
+.post {
+	.post--meta {
+		color: $scheme-4;
+	}		
+	.post--permalink {
+		float: right;
 	}
-	.table__field--hide {
-		display:none;
-	}
-
-	@include breakpoint($bp-small) {
-		.table__field--hide {
-			display:table-cell;
-		}
-	}
-
-	.table__field--edit {
-		height: 40px;
-		border-bottom: 1px solid $scheme-2;
-		.btn {
-			float: right;
-			width: auto;
-			margin: 5px;
-		}
-	}
-	.table__field--thread-message {
+	.post--message {
 		background: white;
 		min-height: 250px;
 		@include span(8 of 12);
@@ -176,7 +167,7 @@ section>table {
 			text-align:left;
 		}
 	}
-	.table__field--thread-author {
+	.post--author {
 		@include span(4 of 12);
 		text-align: center;
 		background: $scheme-3;
@@ -187,7 +178,40 @@ section>table {
 			}
 		}
 	}
+
+}
+.post--edit {
+	height: 40px;
+	border-bottom: 1px solid $scheme-2;
+	.btn {
+		float: right;
+		width: auto;
+		margin: 5px;
+	}
+}
+
+/* 
+Thread hiding
+ */
+.thread {
+	.forum--hide {
+		display:none;
+	}
+
+	@include breakpoint($bp-small) {
+		.forum--hide {
+			display:table-cell;
+		}
+	}
 } 
+html.ielt9 table .forum--hide {
+	display: block;
+}
+
+
+/* 
+Pagination
+ */
 .pagination, .btn-new {
 	@include span(6 of 12);
 	margin-bottom: $space;
@@ -195,9 +219,11 @@ section>table {
 		float: right;
 	}
 }
-html.ielt9 table .table__field--hide {
-	display: block;
-}
+
+
+/* 
+Profile
+ */
 .profile {
 	figure {
 		img {
@@ -221,14 +247,5 @@ html.ielt9 table .table__field--hide {
 	.edit_profile {
 		clear:both;
 		@include span(6 of 12);
-	}
-}
-
-.delete {
-	input, .btn {
-		width: 100px;
-		height: 35px;
-		vertical-align: top;
-		font-weight: normal;
 	}
 }

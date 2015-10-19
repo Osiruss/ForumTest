@@ -45,3 +45,11 @@
 .text-btn {
 	font-style: italic;
 }
+.delete {
+	input, .btn {
+		width: 100px;
+		height: 35px;
+		vertical-align: top;
+		font-weight: normal;
+	}
+}

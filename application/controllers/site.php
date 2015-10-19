@@ -10,7 +10,20 @@ class Site extends MY_Controller {
 	}
 
 	public function home() {
-		$this->load->view('site_header');
+		$this->db->select('threads.subject, posts.*, users.username');
+		$this->db->join('users','users.user_id = posts.user_id');
+		$this->db->join('threads','threads.thread_id = posts.thread_id');
+		$this->db->limit(3);
+		$this->db->order_by('posted_on desc');
+		$this->data->posts = $this->model_posts->get();
+
+
+		for ($i=0; $i < count($this->data->posts); $i++) { 
+			$obj = $this->model_posts->time_expired($this->data->posts[$i]->posted_on);
+			$this->data->posts[$i]->ago = reset($obj);
+		}
+
+		$this->load->view('site_header', $this->data);
 		$this->load->view('content_home');
 		$this->load->view('site_footer');
 	}

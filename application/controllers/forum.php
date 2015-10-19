@@ -54,6 +54,11 @@ class Forum extends MY_Controller {
 				$this->db->join('users','users.user_id = posts.user_id');
 				$this->db->order_by('posts.posted_on DESC');
 				$forum_groups[$l]->forums[$i]->latest = $this->model_threads->get_by($arr, true);
+
+				if ($forum_groups[$l]->forums[$i]->latest != null) {
+					$obj = $this->model_posts->time_expired($forum_groups[$l]->forums[$i]->latest->posted_on);
+					$forum_groups[$l]->forums[$i]->latest->ago = reset($obj);
+				}
 			}			
 		}
 		
@@ -109,6 +114,11 @@ class Forum extends MY_Controller {
 			$this->db->select('COUNT(posts.post_id) as post_count');
 			$this->db->join('posts', 'posts.thread_id = threads.thread_id');
 			$this->data->threads[$i]->post_count = $this->model_threads->get_by($arr, true)->post_count;
+
+			if ($this->data->threads[$i]->latest != null) {
+				$obj = $this->model_threads->time_expired($this->data->threads[$i]->latest->posted_on);
+				$this->data->threads[$i]->latest->ago = reset($obj);
+			}
 		}
 		
 		//get breadcrumbs of specific forum. i.e. parent forums

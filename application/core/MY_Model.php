@@ -117,4 +117,46 @@ class MY_Model extends CI_Model {
 		$this->db->order_by('last_active desc');
 		return $this->get();
 	}
+
+	public function time_expired($t) {
+		$now = new DateTime;
+		$posted = new DateTime($t);
+
+		//get difference between now and included time by using diff function
+		$diff = $now->diff($posted);
+
+		//week is not included by default
+		$diff->w = floor($diff->d / 7);
+		$diff->d -= $diff->w * 7;
+
+		//array of keys to use on diff, with associative values for strings
+		$string = array(
+			'y' => 'year',
+			'm' => 'month',
+			'w' => 'week',
+			'd' => 'day',
+			'h' => 'hour',
+			'i' => 'minute',
+			's' => 'second',
+			);
+		
+		//object creation for easier and more homogeneous use
+		$arr = new stdClass;
+
+		//for each string, get difference in respective time increment
+		foreach ($string as $k => $v) {
+
+			//if $diff->key is not 0, continue
+			if ($diff->$k) {
+
+				//add string to specific property to respective key in object
+				//e.g: $diff->w . ' ' . $v = 1 week
+				$arr->$k = $diff->$k . ' ' . $v . ($diff->$k>1 ? 's' : '');
+			}
+
+		}
+
+		//return first result in object
+		return $arr;
+	}
 }

@@ -270,11 +270,16 @@ a:hover {
 }
 
 /* line 11, ../sass/scss/base/_links.scss */
+a.contain {
+  text-decoration: none;
+}
+
+/* line 15, ../sass/scss/base/_links.scss */
 a.btn {
   text-decoration: none;
 }
 
-/* line 16, ../sass/scss/base/_links.scss */
+/* line 20, ../sass/scss/base/_links.scss */
 table a, nav a {
   text-decoration: none;
 }
@@ -1366,6 +1371,14 @@ td {
   font-style: italic;
 }
 
+/* line 49, ../sass/scss/objects/_buttons.scss */
+.delete input, .delete .btn {
+  width: 100px;
+  height: 35px;
+  vertical-align: top;
+  font-weight: normal;
+}
+
 /* Generic Placeholder Brick: REMOVE FOR PRODUCTION */
 /* line 2, ../sass/scss/objects/_blocks.scss */
 .brick {
@@ -1876,75 +1889,74 @@ td {
   font-size: 1em;
 }
 
-/* line 34, ../sass/scss/_styleguide.scss */
+/* 
+Latest activity block
+ */
+/* line 36, ../sass/scss/_styleguide.scss */
 .latest_activity {
   background: #e3dea3;
   padding: 0.5em;
 }
-/* line 37, ../sass/scss/_styleguide.scss */
+/* line 39, ../sass/scss/_styleguide.scss */
 .latest_activity h1 {
   font-size: 1.1em;
   padding-bottom: 0;
 }
 
-/* line 43, ../sass/scss/_styleguide.scss */
+/* 
+Forum table styling --needs tidying up--
+ */
+/* line 48, ../sass/scss/_styleguide.scss */
 section > table {
   margin: 1% 0;
   border: 1px solid #046380;
 }
-/* line 47, ../sass/scss/_styleguide.scss */
-section > table thead tr {
-  background: #E6E2AF !important;
+/* line 49, ../sass/scss/_styleguide.scss */
+section > table a {
+  text-decoration: underline;
 }
-/* line 50, ../sass/scss/_styleguide.scss */
+/* line 56, ../sass/scss/_styleguide.scss */
+section > table thead tr {
+  background: #d7d07c;
+  border-bottom: 1px solid black;
+}
+/* line 60, ../sass/scss/_styleguide.scss */
 section > table thead th {
   padding: 10px 0;
   font-size: 1.2em;
 }
-/* line 57, ../sass/scss/_styleguide.scss */
+/* line 67, ../sass/scss/_styleguide.scss */
 section > table > tbody > td {
   padding-top: 1.5em;
 }
-/* line 60, ../sass/scss/_styleguide.scss */
-section > table > tbody > tr:nth-child(odd) {
-  background: white;
-}
-/* line 61, ../sass/scss/_styleguide.scss */
+/* line 71, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(odd) a:hover {
   color: #A7A37E;
 }
-/* line 64, ../sass/scss/_styleguide.scss */
+/* line 74, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(odd) a.btn:hover {
   color: white;
 }
-/* line 69, ../sass/scss/_styleguide.scss */
+/* line 78, ../sass/scss/_styleguide.scss */
 section > table > tbody > tr:nth-child(even) {
   background: #E6E2AF;
 }
-/* line 75, ../sass/scss/_styleguide.scss */
-section > table table .table__field--meta {
-  color: #A7A37E;
-}
-/* line 77, ../sass/scss/_styleguide.scss */
-section > table table .table__field--meta .table__field--permalink {
-  float: right;
-}
 /* line 83, ../sass/scss/_styleguide.scss */
-section > table .table__field--group-title th {
+section > table .forum--group-title th {
   background: #d7d07c;
   font-size: 1.4em;
   padding: 0.25em;
 }
 /* line 89, ../sass/scss/_styleguide.scss */
-section > table .table__field--empty {
+section > table .forum--empty {
   padding: 10px;
 }
 /* line 92, ../sass/scss/_styleguide.scss */
-section > table .table__field--hide {
+section > table .forum--hide {
   display: none;
 }
 /* line 95, ../sass/scss/_styleguide.scss */
-section > table .table__field--title {
+section > table .forum--title {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1955,23 +1967,27 @@ section > table .table__field--title {
   margin-left: 0;
   padding-left: 10px;
 }
-/* line 99, ../sass/scss/_styleguide.scss */
-section > table .table__field--title a {
+/* line 96, ../sass/scss/_styleguide.scss */
+section > table .forum--title a {
+  text-decoration: none;
+}
+/* line 102, ../sass/scss/_styleguide.scss */
+section > table .forum--title a {
   display: block;
   padding: 1.5em 1em;
 }
-/* line 104, ../sass/scss/_styleguide.scss */
-section > table td.table__field--title {
+/* line 107, ../sass/scss/_styleguide.scss */
+section > table td.forum--title {
   padding: 0;
   line-height: 1;
 }
-/* line 107, ../sass/scss/_styleguide.scss */
-section > table td.table__field--title span {
+/* line 110, ../sass/scss/_styleguide.scss */
+section > table td.forum--title span {
   font-size: 0.8em;
   font-style: italic;
 }
-/* line 112, ../sass/scss/_styleguide.scss */
-section > table .table__field--latest {
+/* line 115, ../sass/scss/_styleguide.scss */
+section > table .forum--latest {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1980,27 +1996,13 @@ section > table .table__field--latest {
   padding-left: 1.38889%;
   padding-right: 1.38889%;
 }
-/* line 115, ../sass/scss/_styleguide.scss */
-section > table td.table__field--latest, section > table td.table__field--stats, section > table td.table__field--author, section > table .table__field--meta {
+/* line 118, ../sass/scss/_styleguide.scss */
+section > table td.forum--latest, section > table td.forum--stats, section > table td.forum--author, section > table .forum--meta {
   font-size: 0.9em;
 }
 @media (min-width: 46.8em) {
-  /* line 121, ../sass/scss/_styleguide.scss */
-  section > table.forum .table__field--title {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 50%;
-    float: left;
-    padding-left: 1.38889%;
-    padding-right: 1.38889%;
-  }
   /* line 124, ../sass/scss/_styleguide.scss */
-  section > table.forum .table__field--stats, section > table.forum .table__field--author {
-    text-align: center;
-  }
-  /* line 128, ../sass/scss/_styleguide.scss */
-  section > table .table__field--title {
+  section > table.index .forum--title {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2009,8 +2011,22 @@ section > table td.table__field--latest, section > table td.table__field--stats,
     padding-left: 1.38889%;
     padding-right: 1.38889%;
   }
+  /* line 127, ../sass/scss/_styleguide.scss */
+  section > table.index .forum--stats, section > table.index .forum--author {
+    text-align: center;
+  }
   /* line 131, ../sass/scss/_styleguide.scss */
-  section > table .table__field--stats {
+  section > table .forum--title {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-left: 1.38889%;
+    padding-right: 1.38889%;
+  }
+  /* line 134, ../sass/scss/_styleguide.scss */
+  section > table .forum--stats {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2020,8 +2036,8 @@ section > table td.table__field--latest, section > table td.table__field--stats,
     padding-right: 1.38889%;
     text-align: right;
   }
-  /* line 135, ../sass/scss/_styleguide.scss */
-  section > table .table__field--author {
+  /* line 138, ../sass/scss/_styleguide.scss */
+  section > table .forum--author {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2031,8 +2047,8 @@ section > table td.table__field--latest, section > table td.table__field--stats,
     padding-right: 1.38889%;
     text-align: center;
   }
-  /* line 139, ../sass/scss/_styleguide.scss */
-  section > table .table__field--latest {
+  /* line 142, ../sass/scss/_styleguide.scss */
+  section > table .forum--latest {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -2041,39 +2057,25 @@ section > table td.table__field--latest, section > table td.table__field--stats,
     padding-left: 1.38889%;
     padding-right: 1.38889%;
   }
-  /* line 142, ../sass/scss/_styleguide.scss */
-  section > table .table__field--hide {
+  /* line 145, ../sass/scss/_styleguide.scss */
+  section > table .forum--hide {
     display: table-cell;
   }
 }
 
-/* line 149, ../sass/scss/_styleguide.scss */
-.thread .table--post {
-  background: #EFECCA;
+/* 
+Posts
+ */
+/* line 155, ../sass/scss/_styleguide.scss */
+.post .post--meta {
+  color: #A7A37E;
 }
-/* line 152, ../sass/scss/_styleguide.scss */
-.thread .table__field--hide {
-  display: none;
-}
-@media (min-width: 24em) {
-  /* line 157, ../sass/scss/_styleguide.scss */
-  .thread .table__field--hide {
-    display: table-cell;
-  }
-}
-/* line 162, ../sass/scss/_styleguide.scss */
-.thread .table__field--edit {
-  height: 40px;
-  border-bottom: 1px solid #002F2F;
-}
-/* line 165, ../sass/scss/_styleguide.scss */
-.thread .table__field--edit .btn {
+/* line 158, ../sass/scss/_styleguide.scss */
+.post .post--permalink {
   float: right;
-  width: auto;
-  margin: 5px;
 }
-/* line 171, ../sass/scss/_styleguide.scss */
-.thread .table__field--thread-message {
+/* line 161, ../sass/scss/_styleguide.scss */
+.post .post--message {
   background: white;
   min-height: 250px;
   -moz-box-sizing: border-box;
@@ -2084,12 +2086,12 @@ section > table td.table__field--latest, section > table td.table__field--stats,
   padding-left: 1.38889%;
   padding-right: 1.38889%;
 }
-/* line 175, ../sass/scss/_styleguide.scss */
-.thread .table__field--thread-message td {
+/* line 165, ../sass/scss/_styleguide.scss */
+.post .post--message td {
   text-align: left;
 }
-/* line 179, ../sass/scss/_styleguide.scss */
-.thread .table__field--thread-author {
+/* line 169, ../sass/scss/_styleguide.scss */
+.post .post--author {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2101,12 +2103,46 @@ section > table td.table__field--latest, section > table td.table__field--stats,
   background: #EFECCA;
   margin: 0;
 }
-/* line 185, ../sass/scss/_styleguide.scss */
-.thread .table__field--thread-author figure img {
+/* line 175, ../sass/scss/_styleguide.scss */
+.post .post--author figure img {
   max-height: 150px;
 }
 
-/* line 191, ../sass/scss/_styleguide.scss */
+/* line 182, ../sass/scss/_styleguide.scss */
+.post--edit {
+  height: 40px;
+  border-bottom: 1px solid #002F2F;
+}
+/* line 185, ../sass/scss/_styleguide.scss */
+.post--edit .btn {
+  float: right;
+  width: auto;
+  margin: 5px;
+}
+
+/* 
+Thread hiding
+ */
+/* line 196, ../sass/scss/_styleguide.scss */
+.thread .forum--hide {
+  display: none;
+}
+@media (min-width: 24em) {
+  /* line 201, ../sass/scss/_styleguide.scss */
+  .thread .forum--hide {
+    display: table-cell;
+  }
+}
+
+/* line 206, ../sass/scss/_styleguide.scss */
+html.ielt9 table .forum--hide {
+  display: block;
+}
+
+/* 
+Pagination
+ */
+/* line 214, ../sass/scss/_styleguide.scss */
 .pagination, .btn-new {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2117,22 +2153,20 @@ section > table td.table__field--latest, section > table td.table__field--stats,
   padding-right: 1.38889%;
   margin-bottom: 1em;
 }
-/* line 194, ../sass/scss/_styleguide.scss */
+/* line 217, ../sass/scss/_styleguide.scss */
 .pagination .btn, .btn-new .btn {
   float: right;
 }
 
-/* line 198, ../sass/scss/_styleguide.scss */
-html.ielt9 table .table__field--hide {
-  display: block;
-}
-
-/* line 203, ../sass/scss/_styleguide.scss */
+/* 
+Profile
+ */
+/* line 228, ../sass/scss/_styleguide.scss */
 .profile figure img {
   max-height: 200px;
 }
 @media (min-width: 24em) {
-  /* line 202, ../sass/scss/_styleguide.scss */
+  /* line 227, ../sass/scss/_styleguide.scss */
   .profile figure {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2144,7 +2178,7 @@ html.ielt9 table .table__field--hide {
   }
 }
 @media (min-width: 46.8em) {
-  /* line 202, ../sass/scss/_styleguide.scss */
+  /* line 227, ../sass/scss/_styleguide.scss */
   .profile figure {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2156,7 +2190,7 @@ html.ielt9 table .table__field--hide {
   }
 }
 @media (min-width: 24em) {
-  /* line 213, ../sass/scss/_styleguide.scss */
+  /* line 238, ../sass/scss/_styleguide.scss */
   .profile article {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2168,7 +2202,7 @@ html.ielt9 table .table__field--hide {
   }
 }
 @media (min-width: 46.8em) {
-  /* line 213, ../sass/scss/_styleguide.scss */
+  /* line 238, ../sass/scss/_styleguide.scss */
   .profile article {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -2179,7 +2213,7 @@ html.ielt9 table .table__field--hide {
     padding-right: 1.38889%;
   }
 }
-/* line 221, ../sass/scss/_styleguide.scss */
+/* line 246, ../sass/scss/_styleguide.scss */
 .profile .edit_profile {
   clear: both;
   -moz-box-sizing: border-box;
@@ -2189,12 +2223,4 @@ html.ielt9 table .table__field--hide {
   float: left;
   padding-left: 1.38889%;
   padding-right: 1.38889%;
-}
-
-/* line 228, ../sass/scss/_styleguide.scss */
-.delete input, .delete .btn {
-  width: 100px;
-  height: 35px;
-  vertical-align: top;
-  font-weight: normal;
 }
