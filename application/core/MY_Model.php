@@ -14,6 +14,12 @@ class MY_Model extends CI_Model {
 		parent::__construct();
 	}
 
+	/**
+	 * Get data from table
+	 * @param  primary_key  $id     used to get specific row
+	 * @param  boolean $single used to specify if single result or multiple
+	 * @return object          data
+	 */
 	public function get($id = null, $single = false){
 		if ($id != null) {
 			$filter = $this->_primary_filter;
@@ -29,6 +35,12 @@ class MY_Model extends CI_Model {
 		return $this->db->get($this->_table_name)->$method();
 	}
 
+	/**
+	 * Get data from table by $where
+	 * @param  array  $where  specify what to search for in table
+	 * @param  boolean $single used to specify if single result or multiple
+	 * @return object          data
+	 */
 	public function get_by($where, $single = false){
 		//sets the where clause
 		$this->db->where($where);
@@ -43,6 +55,12 @@ class MY_Model extends CI_Model {
 		return $this->db->get($this->_table_name)->$method();
 	}
 
+	/**
+	 * Save or update
+	 * @param  array $data data to be saved or updated
+	 * @param  integer $id   if id is set, update, if not, save
+	 * @return integer     primary_key value of specific row saved or updated
+	 */
 	public function save($data, $id = null){
 		//if $id is set then update, if not, insert
 		if ($id === null) {
@@ -65,6 +83,10 @@ class MY_Model extends CI_Model {
 		return $id;
 	}
 
+	/**
+	 * Delete row
+	 * @param  integer $id id of row to be deleted
+	 */
 	public function delete($id){
 		$filter = $this->_primary_filter;
 		$id = $filter($id);
@@ -76,10 +98,19 @@ class MY_Model extends CI_Model {
 		$this->db->delete($this->_table_name);
 	}
 
+	/**
+	 * Delete row by $array
+	 * @param  array $arr contains specifications to delete by
+	 */
 	public function delete_by($arr) {
 		$this->db->delete($this->_table_name, $arr);
 	}
 
+	/**
+	 * Check if data is unique to table
+	 * @param  array $arr contents to be determined if unique
+	 * @return boolean      true or false
+	 */
 	public function unique($arr) {
 		if ($this->{'model_'.$this->_table_name}->get_by($arr)) {
 			return false;
@@ -88,9 +119,10 @@ class MY_Model extends CI_Model {
 		}
 	}
 
-	/*
-	Record count
-	If argument is set, count by field
+	/**
+	 * Count number of rows
+	 * @param  arr $arr if set, select where, if not, select all
+	 * @return integer      count of rows
 	 */
 	public function record_count($arr = null) {
 		$this->db->select("COUNT($this->_primary_key) as count");
@@ -109,6 +141,11 @@ class MY_Model extends CI_Model {
 		return $this->pagination->create_links();
 	}
 
+	/**
+	 * Return users active within last specified minutes
+	 * @param  integer $minutes minutes to guage actiity in
+	 * @return object          users active
+	 */
 	public function last_activity($minutes) {
 		$minutes_ago = time() - (60 * $minutes);
 		$datetime = date('Y-m-d H:i:s', $minutes_ago);
@@ -118,6 +155,12 @@ class MY_Model extends CI_Model {
 		return $this->get();
 	}
 
+
+	/**
+	 * Get time expired since entered time
+	 * @param  datetime $t time to be compared with current datetime
+	 * @return object    formatted difference of time (3 hours ago, etc)
+	 */
 	public function time_expired($t) {
 		$now = new DateTime;
 		$posted = new DateTime($t);
