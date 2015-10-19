@@ -6,8 +6,4 @@ class Model_Forum_Groups extends MY_Model {
 	protected $_primary_filter = 'intval';
 	//protected $_order_by = 'posted_on';
 
-	function __construct() {
-		
-	}
-
 }

@@ -7,10 +7,6 @@ class Model_Forum extends MY_Model {
 	//protected $_order_by = 'posted_on';
 	protected $_rules = array();
 	protected $_timestamps = false;
-	
-	function __construct() {
-		
-	}
 
 	public function breadcrumbs($fid, $tid = null) {
 		$initial = $this->get($fid);

@@ -5,11 +5,13 @@ class Model_Temp extends MY_Model {
 	protected $_primary_key = 'temp_id';
 	protected $_primary_filter = 'intval';
 	protected $_rules = array();
-	
-	function __construct() {
 		
-	}
-	
+	/**
+	 * Send confirmation email (tested by test mail server software)
+	 * @param  string $email 
+	 * @param  integer $uid   user_id
+	 * @return boolean        
+	 */
 	public function send_confirmation($email, $uid) {
 		$code = $this->random();
 
@@ -29,9 +31,14 @@ class Model_Temp extends MY_Model {
 
 		$this->save(array('code'=>$code,'user_id'=>$uid));	
 
-		$this->email->send();
+		if ($this->email->send()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	//get random number
 	public function random() {
 		$result = '';
 

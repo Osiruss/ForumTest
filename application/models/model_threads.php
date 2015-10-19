@@ -13,10 +13,10 @@ class Model_Threads extends MY_Model {
 			)
 		);
 
-	function __construct() {
-		
-	}
-
+	/**
+	 * Update latest_post_date field
+	 * @param  integer $tid thread_id
+	 */
 	public function update($tid) {
 		$this->db->query("UPDATE threads SET latest_post_date = NOW() WHERE thread_id=".$tid);
 	}

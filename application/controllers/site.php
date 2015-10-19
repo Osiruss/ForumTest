@@ -48,8 +48,9 @@ class Site extends MY_Controller {
 		//if form passes validation, run
 		if($this->form_validation->run()!=false) {
 			
+			$arr = array('username'=>$this->input->post('username'), 'password'=>$this->input->post('password'));
 			//if users login is sucessful, continue
-			if($this->model_users->login()) {
+			if($this->model_users->login($arr)) {
 
 				//if flashdata redirect is set, redirect back to page user was previously  on
 				if ($this->session->flashdata('redirect')) {

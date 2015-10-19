@@ -12,9 +12,6 @@ class Model_Posts extends MY_Model {
 			'rules'=>'trim|required|htmlentities|min_length[5]|max_length[5000]'
 			)
 		);
-	function __construct() {
-		
-	}
 
 	/**
 	 * Checks if post is first post in thread
