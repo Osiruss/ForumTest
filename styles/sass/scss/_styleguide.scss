@@ -141,7 +141,10 @@ Forum table styling --needs tidying up--
 /* 
 Posts
  */
-.post {
+.post--container {
+	border: 1px solid $scheme-1;
+	background: $scheme-3;
+	margin-bottom: $space;
 	.post--meta {
 		color: $scheme-4;
 	}		
@@ -176,6 +179,7 @@ Posts
 .post--edit {
 	height: 40px;
 	border-bottom: 1px solid $scheme-2;
+	background: darken($scheme-3, 10);
 	.btn {
 		float: right;
 		width: auto;
