@@ -1,0 +1,234 @@
+.site-main {
+	clear: both;
+}
+.site-container {
+	margin: $space 0;
+	overflow: hidden;
+	h1 {
+		padding-bottom: 15px;
+	}
+}
+.site-header nav section {
+	float: right;
+	font-weight:bold;
+	padding: $space $space-double;
+}
+.site-banner {
+	display: block;
+	padding: 25% 0;
+	background: url(../../img/li.jpg) center center no-repeat;
+	background-size: cover;
+}
+.site-article {
+	padding: $space-double;
+	margin-bottom: $space;
+	background: lighten($primary, 100);
+	text-align:left;
+	&.product-item {
+		h1 {
+			font-size: $font-size-med;
+		}
+	}
+}
+
+.latest_activity {
+	background: darken($scheme-3, 10);
+	padding:$space-half;
+	h1 {
+		font-size: 1.1em;
+		padding-bottom: 0;
+	}
+}
+
+section>table {
+	margin: 1% 0;
+	border: 1px solid $scheme-1;
+	thead {
+		tr {
+			background: $scheme-5!important;
+		}
+		th {
+			padding: 10px 0;
+			font-size: 1.2em;
+		}
+	}
+
+	>tbody {
+		>td {
+			padding-top: $space*1.5;
+		}	
+		>tr:nth-child(odd) {
+			a:hover {
+				color: $scheme-4;
+			}
+			a.btn:hover {
+				color:white;
+			}
+			background: white;
+		}
+		>tr:nth-child(even) {
+			background: $scheme-5;
+		}
+	}
+	
+	table {
+		.table__field--meta {
+			color: $scheme-4;
+			.table__field--permalink {
+				float: right;
+			}
+		}
+	}
+	.table__field--group-title {
+		th {
+			background: darken($scheme-3, 20);
+			font-size: 1.4em;
+			padding:$space-half/2;
+		}
+	}
+	.table__field--empty {
+		padding: 10px;
+	}
+	.table__field--hide {
+		display: none;
+	}
+	.table__field--title {
+		@include span(9 of 12);
+		margin-left: 0;
+		padding-left: 10px;
+		a {
+			display: block;
+			padding: $space*1.5 $space;
+		}
+	}
+	td.table__field--title {
+		padding: 0;
+		line-height: 1;
+		span {
+			font-size: 0.8em;
+			font-style: italic;
+		}
+	}
+	.table__field--latest {
+		@include span(3 of 12);
+	}
+	td.table__field--latest, td.table__field--stats, td.table__field--author, .table__field--meta {
+		font-size: 0.9em;
+	}
+	
+	@include breakpoint($bp-med) {
+		&.forum {
+			.table__field--title {
+				@include span(6 of 12);
+			}
+			.table__field--stats, .table__field--author {
+				text-align: center;
+			}
+		}
+		.table__field--title {
+			@include span(8 of 12);
+		}
+		.table__field--stats {
+			@include span(2 of 12);
+			text-align: right;
+		}
+		.table__field--author {
+			@include span(2 of 12);
+			text-align: center;
+		}
+		.table__field--latest {
+			@include span(2 of 12);
+		}
+		.table__field--hide {
+			display:table-cell;
+		}
+	}
+}
+
+.thread {
+	.table--post {
+		background: #EFECCA;
+	}
+	.table__field--hide {
+		display:none;
+	}
+
+	@include breakpoint($bp-small) {
+		.table__field--hide {
+			display:table-cell;
+		}
+	}
+
+	.table__field--edit {
+		height: 40px;
+		border-bottom: 1px solid $scheme-2;
+		.btn {
+			float: right;
+			width: auto;
+			margin: 5px;
+		}
+	}
+	.table__field--thread-message {
+		background: white;
+		min-height: 250px;
+		@include span(8 of 12);
+		td {
+			text-align:left;
+		}
+	}
+	.table__field--thread-author {
+		@include span(4 of 12);
+		text-align: center;
+		background: $scheme-3;
+		margin: 0;
+		figure {
+			img {
+				max-height: 150px;
+			}
+		}
+	}
+} 
+.pagination, .btn-new {
+	@include span(6 of 12);
+	margin-bottom: $space;
+	.btn {
+		float: right;
+	}
+}
+html.ielt9 table .table__field--hide {
+	display: block;
+}
+.profile {
+	figure {
+		img {
+			max-height:200px;
+		}
+		@include breakpoint($bp-small) {
+			@include span(3 of 12);
+		}
+		@include breakpoint($bp-med) {
+			@include span(2 of 12);
+		}
+	}
+	article {
+		@include breakpoint($bp-small) {
+			@include span(9 of 12);
+		}
+		@include breakpoint($bp-med) {
+			@include span(10 of 12);
+		}
+	}
+	.edit_profile {
+		clear:both;
+		@include span(6 of 12);
+	}
+}
+
+.delete {
+	input, .btn {
+		width: 100px;
+		height: 35px;
+		vertical-align: top;
+		font-weight: normal;
+	}
+}

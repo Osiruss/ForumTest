@@ -1,0 +1,19 @@
+/* Links */ 
+a {
+	color: darken($primary, 90);
+	outline: 0;
+	
+	&:hover {
+		color: $scheme-4;
+	}
+}
+
+a.btn {
+	text-decoration:none;
+}
+
+table, nav {
+	a {
+		text-decoration: none;
+	}
+}

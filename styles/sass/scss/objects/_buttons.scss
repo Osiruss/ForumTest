@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+.btn {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+    border: 1px solid #808080;
+	@include gradient();
+	color: $white;
+	line-height: 1;
+	font-weight: bold;
+	padding: $pad/2 $pad-double;
+	text-align: center;
+
+
+	
+	&:focus {
+		color: $white;
+	}
+	&:hover {
+		color:white;
+	}
+
+	&.disabled {
+		background: $gray-light-2;
+		color: $gray;
+	}
+}
+.btn-new, .btn-edit {
+	float: right!important;
+}
+
+.btn-small {
+	padding: $pad-half;
+}
+
+.btn-large {
+	padding: $pad-half;
+	text-transform: uppercase;
+	background: $gray;
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+.text-btn {
+	font-style: italic;
+}

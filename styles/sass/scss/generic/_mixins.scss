@@ -1,0 +1,57 @@
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+/* CSS Transition
+	Usage: @include transition(width,0.3s,ease-out);
+ */
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin gradient() {
+	background: $scheme-4; /* Old browsers */
+	background: -moz-linear-gradient(top, $scheme-4 0%, darken($scheme-4, 5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$scheme-4), color-stop(100%,darken($scheme-4, 5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $scheme-4 0%,darken($scheme-4, 5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $scheme-4 0%,darken($scheme-4, 5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $scheme-4 0%,darken($scheme-4, 5) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $scheme-4 0%,darken($scheme-4, 5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$scheme-4}', endColorstr='#{darken($scheme-4, 5)}',GradientType=0 ); /* IE6-9 */
+}
+
+//Display inline-block cross browser
+@mixin dib() {
+	float: none!important;
+	vertical-align:top;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+/* Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+	Usage: @include font-size(1, large);
+*/
+@mixin font-size( $decimal-size, $keyword: null ) {
+  @if $keyword{ font-size: $keyword; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px;}
+  font-size: $decimal-size * 1rem;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}

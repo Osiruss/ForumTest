@@ -1,0 +1,50 @@
+//Article
+.article-header {
+	h1 {
+		font-size: $font-size-med*1.5;
+	    word-break: keep-all;
+	}
+}
+.article-content {
+	margin-bottom: 0;
+}
+.article--small {
+	@include breakpoint($bp-med) {
+		@include span(6 of 12);
+	}
+	@include breakpoint($bp-large) {
+		@include span(4 of 12);
+	}
+}
+.article--med {
+	@include breakpoint($bp-med) {
+		@include span(6 of 12);
+	}
+}
+.byline {
+	font-size: $font-size-small-2;
+	font-style: italic;
+	margin-bottom: $space-half;
+	color: $gray;
+}
+//Social Share
+.social-share {
+	overflow: hidden;
+	margin-bottom: $space;
+
+	li {
+		float: left;
+		margin-right: $space-half;
+	}
+
+	a {
+		background: $gray-dark;
+		color: $white;
+		display: block;
+		padding: $pad-half;
+
+		&:hover {
+			background: $gray;
+		}
+	}
+}

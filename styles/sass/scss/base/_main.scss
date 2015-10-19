@@ -1,0 +1,14 @@
+body {
+	background: $bg;
+	overflow:visible;
+	font: 100%/1.6 $font;
+	-webkit-text-size-adjust: 100%;
+	color: $scheme-2;
+	@include container(90%);
+	@include breakpoint($bp-large){
+		@include container(50%);
+	}
+	@include breakpoint($bp-med){
+		@include container(80%);
+	}
+}
