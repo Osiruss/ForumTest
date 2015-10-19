@@ -24,6 +24,7 @@ if ($('.register__form').length) {
 	};
 }
 
+//unifinished form validation
 if ($('textarea[name=message]').length) {
 	var message = document.getElementsByTagName('textarea');
 	for (var i = 0; i < message.length; i++) {
@@ -37,6 +38,7 @@ if ($('textarea[name=message]').length) {
 	};
 }
 
+//unifinished form validation
 if ($('input[name=subject]').length) {
 	console.log('hi');
 }
