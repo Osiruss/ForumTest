@@ -12,14 +12,12 @@
 	nav section {
 		float: right;
 		color:black;
-		font-size: 1.1em;
-		padding: $space $space-double;
 		@include breakpoint($bp-small-3) {
+			font-size: 1.1em;
+			padding: $space $space-double;
 			color:white;
 		}
 	}
-
-
 }
 .site-banner {
 	display: block;
@@ -213,10 +211,14 @@ Block hiding
 Pagination
  */
 .pagination, .btn-new {
-	@include span(6 of 12);
 	margin-bottom: $space;
+	@include span(12 or 12);
 	.btn {
 		float: right;
+	}
+
+	@include breakpoint($bp-med) {
+		@include span(6 of 12);
 	}
 }
 
