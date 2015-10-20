@@ -11,10 +11,15 @@
 .site-header {
 	nav section {
 		float: right;
-		color:white;
+		color:black;
 		font-size: 1.1em;
 		padding: $space $space-double;
+		@include breakpoint($bp-small-3) {
+			color:white;
+		}
 	}
+
+
 }
 .site-banner {
 	display: block;

@@ -12,9 +12,12 @@ fieldset {
 	margin: 0;
 }
 
-label {
+label + input {
 	display: block;
-	padding: $space-half 0 0;
+	padding: $space-half;
+	margin-bottom: $space;
+	max-width: 500px;
+	min-width: 150px;
 }
 
 button, input, select, textarea {
