@@ -1,7 +1,7 @@
 <div class="site-container">
 	<section>
 	<h1><a href="<?php echo base_url('thread/'.$post->thread_id); ?>"><?php echo $subject; ?></a></h1>
-		<table class="thread">
+		<table class="thread post--container">
 			<tbody>
 				<tr class="post" id='<?php echo $post->post_id; ?>'>
 					<td class="post--author">

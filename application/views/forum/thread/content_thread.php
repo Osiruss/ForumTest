@@ -9,7 +9,7 @@
 			<a class="btn" href="<?php echo base_url('post/new/').'/'.$tid ?>">New post</a>
 		</div>
 
-		<table class="thread">
+		<table class="thread post--container">
 			<tbody>
 				<?php for ($i=0; $i < count($posts); $i++) { ?>
 				<tr class="post" id='<?php echo $posts[$i]->post_id; ?>'>
