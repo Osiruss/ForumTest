@@ -48,7 +48,7 @@
 	</table>
 
 	<section class='latest_activity'>
-		<strong>Online in the last <?php echo $activity_limit; ?> minutes: <?php echo $latest_activity_count>1 ? $latest_activity_count. ' users' : $latest_activity_count.' user';?></strong><br>
+		<strong>Online in the last <?php echo $activity_limit; ?> minutes: <?php echo $latest_activity_count>1 || $latest_activity_count == 0 ? $latest_activity_count. ' users' : $latest_activity_count.' user';?></strong><br>
 	
 	<?php if ($latest_activity_count === 0) {
 		echo '<p>No activity in the last '.$activity_limit.' minutes</p>';
