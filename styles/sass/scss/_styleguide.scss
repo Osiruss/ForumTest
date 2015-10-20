@@ -48,6 +48,7 @@ Latest activity block
 Forum table styling --needs tidying up--
  */
 .forum--container {
+	min-width: 250px;
 	a {
 		text-decoration: underline;
 	}
@@ -145,11 +146,15 @@ Forum table styling --needs tidying up--
 Posts
  */
 .post--container {
+	min-width:250px;
 	border: 1px solid $scheme-1;
 	background: $scheme-3;
 	margin-bottom: $space;
 	.post--meta {
-		color: $scheme-4;
+		td:first-child a {
+			color: $scheme-4;
+			font-style: italic;			
+		}
 	}		
 	.post--permalink {
 		float: right;
@@ -205,8 +210,6 @@ Block hiding
 	}
 }
 
-
-
 /* 
 Pagination
  */
@@ -214,14 +217,17 @@ Pagination
 	margin-bottom: $space;
 	@include span(12 or 12);
 	.btn {
-		float: right;
+		width: 100%;
+		margin: 0;
 	}
 
-	@include breakpoint($bp-med) {
+	@include breakpoint($bp-small) {
 		@include span(6 of 12);
 	}
 }
-
+.btn-new {
+	padding: 0;
+}
 
 /* 
 Profile
@@ -249,5 +255,39 @@ Profile
 	.edit--profile {
 		clear:both;
 		@include span(6 of 12);
+	}
+}
+
+.home {
+	>section {
+		&[class$=ainer] {
+			article {
+				&:nth-of-type(2) {
+					header + p {
+						background: white;
+					}
+				}
+			}
+		}
+
+		&[class^=site-b] {
+			@include css3-prefix(box-shadow, 0px 1px 1px 1px gray);
+		}
+	}
+
+	article {
+		@include css3-prefix(box-shadow, 0px 0px 1px 1px gray);
+	}
+
+	article:first-of-type {
+		background: $scheme-5;
+	}
+
+	article ~ article {
+		background: #A6A6E2;
+	}
+
+	article:nth-of-type(1) + article {
+		background: cadetblue;
 	}
 }
