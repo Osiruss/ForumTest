@@ -49,13 +49,16 @@
 
 	<section class='latest_activity'>
 		<strong>Online in the last <?php echo $activity_limit; ?> minutes: <?php echo $latest_activity_count>1 ? $latest_activity_count. ' users' : $latest_activity_count.' user';?></strong><br>
-	<?php if (count($latest_activity) === 0) {
+	
+	<?php if ($latest_activity_count === 0) {
 		echo '<p>No activity in the last '.$activity_limit.' minutes</p>';
 	} else { ?>
-	<?php for ($i=0; $i < count($latest_activity); $i++) { ?>
+	
+	<?php for ($i=0; $i < $latest_activity_count; $i++) { ?>
 		<a href="<?php echo base_url('user/'.$latest_activity[$i]->user_id); ?>">
 			<?php echo $latest_activity[$i]->group_id == 1 ? '<strong>'.$latest_activity[$i]->username.'</strong>' : $latest_activity[$i]->username; ?></a> 
 	<?php } 
+	
 	}?>
 	</section>
 </section>
