@@ -1,4 +1,8 @@
 .DS_Store
+
+img
+img/*
+
 styles/.sass-cache
 styles/.sass-cache/*
 
