@@ -26,8 +26,8 @@
 					<td class="post--message">
 						<table>
 							<tr class="post--meta">
-								<td><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>"><?php echo date("jS F g:ia",strtotime($posts[$i]->posted_on)); ?></a></td>
-								<td class="post--permalink forum--hide"><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>">Permalink</a></td>
+								<td><a href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>"><?php echo date("jS F g:ia",strtotime($posts[$i]->posted_on)); ?></a>
+								<a class="post--permalink" href="<?php echo base_url('post/'.$posts[$i]->post_id); ?>">Permalink</a></td>
 							</tr>
 							<tr><td><?php echo nl2br($posts[$i]->message); ?></td></tr>
 						</table>
