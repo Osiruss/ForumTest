@@ -150,6 +150,7 @@ class MY_Model extends CI_Model {
 		$minutes_ago = time() - (60 * $minutes);
 		$datetime = date('Y-m-d H:i:s', $minutes_ago);
 
+		$this->db->select('username, user_id, group_id');
 		$this->db->where("last_active >= '$datetime'");
 		$this->db->order_by('last_active desc');
 		return $this->get();

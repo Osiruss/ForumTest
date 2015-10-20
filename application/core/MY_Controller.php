@@ -9,6 +9,7 @@ class MY_Controller extends CI_Controller {
 	public $is_admin;
 	public $thread_limit;
 	public $post_limit;
+	public $activity_limit;
 
 	function __construct() {
         parent::__construct();
@@ -25,7 +26,7 @@ class MY_Controller extends CI_Controller {
    		$this->data = new stdClass();
 
         //activity limit for last online, in minutes
-		$this->data->activity_limit = 20;
+		$this->data->activity_limit = 240;
 
 		//get class and method names
 		$this->class = $this->router->fetch_class();

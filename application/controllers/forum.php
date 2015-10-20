@@ -69,6 +69,7 @@ class Forum extends MY_Controller {
 
 		//get list of users active in the last xxx minutes
 		$this->data->latest_activity = $this->model_users->last_activity($this->data->activity_limit);
+		$this->data->latest_activity_count = count($this->data->latest_activity);
 
 		//render view
 		$this->render('forum/content_'.$this->method);	
