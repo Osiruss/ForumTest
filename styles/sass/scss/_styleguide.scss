@@ -258,6 +258,9 @@ Profile
 	}
 }
 
+/* 
+//Playing with selectors, sorry
+
 .home {
 	>section {
 		&[class$=ainer] {
@@ -290,4 +293,4 @@ Profile
 	article:nth-of-type(1) + article {
 		background: cadetblue;
 	}
-}
+} */
