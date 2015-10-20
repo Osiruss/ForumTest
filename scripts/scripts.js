@@ -1,4 +1,4 @@
-if ($('.register__form').length) {
+/*if ($('.register__form').length) {
 	var f = document.getElementsByClassName('register__form')[0],
 		v = document.getElementsByClassName('validation')[0],
 		inp = f.getElementsByTagName('input'),
@@ -22,7 +22,7 @@ if ($('.register__form').length) {
 			});	
 		}
 	};
-}
+}*/
 
 //unifinished form validation
 if ($('textarea[name=message]').length) {
