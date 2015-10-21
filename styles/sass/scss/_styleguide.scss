@@ -276,37 +276,70 @@ body {
 		}
 	} */
 }
+
 .home {
+	[class^=site-bar] {
+		margin: $space 0;
+		width: 50%;
+
+		label {
+			font:1.2em/1 Verdana;
+		}
+
+		[class=test-bar] {
+			height:5px;
+			width:100%;
+			background: white;
+			margin-bottom: $space;
+
+			@for $i from 1 through 5 {
+				&:nth-of-type(#{$i}) {
+					span {
+						width: $i * 20%;
+					}
+				}
+			}
+
+			span:only-child {
+				display: block;
+				height: 100%;
+				background: red;
+			}
+		}		
+	}
+
 	>section {
 		ul:only-child {
 			li {
 				padding:$space;
 				font: 1.3em/1 garamond;
 			}
+
 			@for $i from 1 through 5 {
+				$col : #DDDAF7;
 				li:nth-child(#{$i}) {
 					padding-left: $i * $space;
 					transition: background 1s;
 					&:hover {
 						transition: background 1s;
-						background:darken(#ccc, $i*4);
+						background:darken($col, $i*4);
 					}
 				}
 
 				li:first-child {
-					background: lighten(#ccc, 6);
+					background: lighten($col, 6);
 				}
 				li:first-child + li {
-					background: lighten(#ccc, 3);
+					background: lighten($col, 3);
 				}
 				li:first-child + li + li {
-					background: #ccc;
+					background: $col;
 				}
 				li:nth-child(4) {
-					background: darken(#ccc, 3);
+					background: darken($col, 3);
 				}
 				li:nth-child(4) ~ li {
-					background: darken(#ccc, 6);
+					background: darken($col, 6);
 				}
 			}
 		}
@@ -332,13 +365,6 @@ body {
 					a, p:only-child {
 						color:white;
 						transition:color 2s ease-in;
-					}
-				}
-
-
-				&:nth-of-type(2) {
-					header + p {
-
 					}
 				}
 			}
