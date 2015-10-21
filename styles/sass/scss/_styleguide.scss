@@ -258,48 +258,50 @@ Profile
 	}
 }
 
-//Playing with selectors and transitions
-body {
-/* 	[class$=anner] {
-		@include css3-prefix(box-shadow, 0px 0px 0px 0px gray);
-		opacity: 1;
-		width:100%;
-		transition:width 2s linear, opacity 2s linear, padding 2s ease-in;	
-	}
-	&:hover {
-		[class^=site-b] {
-			@include css3-prefix(box-shadow, 0px 0px 1px 1px gray);
-			opacity: 0;
-			width:250px;
-			padding:0;
-			transition:width 2s linear, opacity 2s linear, padding 3s ease-out;
-		}
-	} */
-}
-
-@keyframes bounce {
+//Playing with selectors, keyframes and transitions
+@keyframes pulse {
 	0% {
+		@include css3-prefix(opacity, 0.4);
 		height:50px;
 		width: 50px;
+		background: darkred;
 	}
 
 	20% {
-	}
-	40% {
-	}
-	50% {
 		top:40%;
 		left:40%;
 		height:100px;
-		width: 100px;		
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 1);
+	}
+	40% {
+	
+	}
+	50% {
+		top:42.5%;
+		left:42.5%;
+		height:75px;
+		width: 75px;
+		background: lighten(darkred, 10%);
+		@include css3-prefix(opacity, 0.9);
 	}
 	60% {
+
 	}	
 	80% {
+		top:40%;
+		left:40%;
+		height:100px;
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 1);
 	}
 	100% {
+		@include css3-prefix(opacity, 0.4);
 		height:50px;
 		width: 50px;
+		background: darkred;
 	}
 }
 
@@ -320,13 +322,22 @@ body {
 	}
 	&:hover {
 		.ball {
-			animation: bounce 0.5s infinite ease-in;
+			animation: pulse 0.75s infinite linear;
 		}
 	}
 }
 
 
 .home {
+	[class*=nner] {
+		@include css3-prefix(border-radius, 10%);
+		transition:opacity 3s;
+		&:hover {
+			opacity: 0.5;
+			transition:opacity 3s;
+		}
+	}
+
 	[class^=site-bar] {
 		margin: $space 0;
 		width: 50%;
@@ -358,6 +369,9 @@ body {
 	}
 
 	>section {
+		&[class*=container] {
+			background: white;
+		}
 		ul:only-child {
 			li {
 				padding:$space;
@@ -392,47 +406,5 @@ body {
 				}
 			}
 		}
-
-		&[class$=ainer] {
-			article {
-				h1:only-child {
-					transition:color 1.5s ease-out;
-				}
-				a, p:only-child {
-					color:black;
-					transition:color 1.5s ease-out;
-				}
-				background: #FFDBDB;
-				transition:background 1.5s ease-out;
-				&:hover {
-					background: gray;
-					transition:background 2s ease-in;
-					h1 {
-						color:lightgray;
-						transition:color 2s ease-in;
-					}
-					a, p:only-child {
-						color:white;
-						transition:color 2s ease-in;
-					}
-				}
-			}
-		}
-	}
-
-	article {
-		@include css3-prefix(box-shadow, 0px 0px 1px 1px gray);
-	}
-
-	article:first-of-type {
-		background: $scheme-5;
-	}
-
-	article ~ article {
-		background: #A6A6E2;
-	}
-
-	article:nth-of-type(1) + article {
-		background: #CEECED;
 	}
 }
