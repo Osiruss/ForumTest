@@ -30,4 +30,30 @@
     </ul>
   </section>
 
+  <section class="site-bars">
+    <label>Bar</label>
+    <div class="test-bar">
+      <span></span>
+    </div>
+    
+    <label>Bar</label>
+    <div class="test-bar">
+      <span></span>
+    </div>
+    
+    <label>Bar</label>
+    <div class="test-bar">
+      <span></span>
+    </div>
+    
+    <label>Bar</label>
+    <div class="test-bar">
+      <span></span>
+    </div>
+    
+    <label>Bar</label>
+    <div class="test-bar">
+      <span></span>
+    </div>
+  </section>
 </div>
