@@ -32,8 +32,10 @@
 			padding: $pad/2 $pad;
 			font-size: $space*1.2;
 			color:lighten($primary, 80);
+			@include css3-prefix(transition, background 0.5s);
 			&:hover {
 				background: darken($scheme-1, 5);
+				@include css3-prefix(transition, background 0.5s);
 			}
 		}
 		

@@ -259,48 +259,88 @@ Profile
 }
 
 //Playing with selectors and transitions
+body {
+/* 	[class$=anner] {
+		@include css3-prefix(box-shadow, 0px 0px 0px 0px gray);
+		opacity: 1;
+		width:100%;
+		transition:width 2s linear, opacity 2s linear, padding 2s ease-in;	
+	}
+	&:hover {
+		[class^=site-b] {
+			@include css3-prefix(box-shadow, 0px 0px 1px 1px gray);
+			opacity: 0;
+			width:250px;
+			padding:0;
+			transition:width 2s linear, opacity 2s linear, padding 3s ease-out;
+		}
+	} */
+}
 .home {
 	>section {
+		ul:only-child {
+			li {
+				padding:$space;
+				font: 1.3em/1 garamond;
+			}
+			@for $i from 1 through 5 {
+				li:nth-child(#{$i}) {
+					padding-left: $i * $space;
+					transition: background 1s;
+					&:hover {
+						transition: background 1s;
+						background:darken(#ccc, $i*4);
+					}
+				}
+
+				li:first-child {
+					background: lighten(#ccc, 6);
+				}
+				li:first-child + li {
+					background: lighten(#ccc, 3);
+				}
+				li:first-child + li + li {
+					background: #ccc;
+				}
+				li:nth-child(4) {
+					background: darken(#ccc, 3);
+				}
+				li:nth-child(4) ~ li {
+					background: darken(#ccc, 6);
+				}
+			}
+		}
+
 		&[class$=ainer] {
 			article {
 				h1:only-child {
-					transition:color 2s;
-				}
-				background: #FFDBDB;
-				transition:background 2s;
-				&:hover {
-					background: gray;
-					transition:background 2s;
-					h1 {
-						color:lightgray;
-						transition:2s;
-					}
-					a, p:only-child {
-						color:white;
-						transition:color 2s;
-					}
+					transition:color 1.5s ease-out;
 				}
 				a, p:only-child {
 					color:black;
-					transition:color 1s;
+					transition:color 1.5s ease-out;
 				}
+				background: #FFDBDB;
+				transition:background 1.5s ease-out;
+				&:hover {
+					background: gray;
+					transition:background 2s ease-in;
+					h1 {
+						color:lightgray;
+						transition:color 2s ease-in;
+					}
+					a, p:only-child {
+						color:white;
+						transition:color 2s ease-in;
+					}
+				}
+
 
 				&:nth-of-type(2) {
 					header + p {
 
 					}
 				}
-			}
-		}
-
-		&[class^=site-b] {
-			@include css3-prefix(box-shadow, 0px 0px 0px 0px gray);
-			opacity: 1;
-			transition:box-shadow 2s, opacity 2s;
-			&:hover {
-				@include css3-prefix(box-shadow, 0px 0px 1px 1px gray);
-				opacity: 0.5;
-				transition:box-shadow 2s opacity 2s;
 			}
 		}
 	}
