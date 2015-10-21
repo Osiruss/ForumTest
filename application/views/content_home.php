@@ -19,4 +19,15 @@
     </article>
   <?php } ?>
   </section>
+
+  <section class='site-list'>
+    <ul>
+      <li>Lorem.</li>
+      <li>Quibusdam.</li>
+      <li>Ipsam.</li>
+      <li>Alias!</li>
+      <li>Dolorum.</li>
+    </ul>
+  </section>
+
 </div>
