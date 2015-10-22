@@ -260,55 +260,34 @@ Profile
 
 //Playing with selectors, keyframes and transitions
 @keyframes pulse {
-	0% {
-		@include css3-prefix(opacity, 0.4);
+	0%, 100% {
+		@include css3-prefix(opacity, 0.2);
 		height:50px;
 		width: 50px;
 		background: darkred;
 	}
-
-	20% {
+	30%, 70% {
 		top:40%;
-		left:40%;
+		left:42.5%;
 		height:100px;
 		width: 100px;
 		background: red;
-		@include css3-prefix(opacity, 1);
-	}
-	40% {
-	
+		@include css3-prefix(opacity, 0.8);
 	}
 	50% {
-		top:42.5%;
-		left:42.5%;
-		height:75px;
-		width: 75px;
+		top:41.5%;
+		left:43%;
+		height:90px;
+		width: 90px;
 		background: lighten(darkred, 10%);
-		@include css3-prefix(opacity, 0.9);
-	}
-	60% {
-
-	}	
-	80% {
-		top:40%;
-		left:40%;
-		height:100px;
-		width: 100px;
-		background: red;
-		@include css3-prefix(opacity, 1);
-	}
-	100% {
-		@include css3-prefix(opacity, 0.4);
-		height:50px;
-		width: 50px;
-		background: darkred;
+		@include css3-prefix(opacity, 0.7);
 	}
 }
 
 .cont {
 	position: relative;
 	height: 500px;
-	width:500px;
+	width:100%;
 	background: #ccc;
 	@include css3-prefix(border-radius, 5%);
 	.ball {
@@ -321,8 +300,14 @@ Profile
 		position: absolute;
 	}
 	&:hover {
-		.ball {
-			animation: pulse 0.75s infinite linear;
+		.b0 {
+			animation: pulse 1s infinite ease-in;
+		}
+		.b1 {
+			animation: pulse 2s infinite ease-in;
+		}
+		.b2 {
+			animation: pulse 2s infinite ease-in 1s;
 		}
 	}
 }
@@ -346,6 +331,17 @@ Profile
 			font:1.2em/1 Verdana;
 		}
 
+		&:hover {
+			@for $i from 1 through 5 {
+				[class=test-bar]:nth-of-type(#{$i}) {
+					span {
+						width: $i * 20%;
+						transition:width 1s linear;
+					}
+				}
+			}	
+		}
+
 		[class=test-bar] {
 			height:5px;
 			width:100%;
@@ -355,7 +351,8 @@ Profile
 			@for $i from 1 through 5 {
 				&:nth-of-type(#{$i}) {
 					span {
-						width: $i * 20%;
+						width: $i * 10%;
+						transition:width 1s linear;
 					}
 				}
 			}
