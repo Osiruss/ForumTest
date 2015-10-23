@@ -258,62 +258,8 @@ Profile
 	}
 }
 
-//Playing with selectors, keyframes and transitions
-@keyframes pulse {
-	0%, 100% {
-		@include css3-prefix(opacity, 0.2);
-		height:50px;
-		width: 50px;
-		background: darkred;
-	}
-	30%, 70% {
-		top:40%;
-		left:42.5%;
-		height:100px;
-		width: 100px;
-		background: red;
-		@include css3-prefix(opacity, 0.8);
-	}
-	50% {
-		top:41.5%;
-		left:43%;
-		height:90px;
-		width: 90px;
-		background: lighten(darkred, 10%);
-		@include css3-prefix(opacity, 0.7);
-	}
-}
-
-.cont {
-	position: relative;
-	height: 500px;
-	width:100%;
-	background: #ccc;
-	@include css3-prefix(border-radius, 5%);
-	.ball {
-		@include css3-prefix(border-radius, 50%);
-		background: red;
-		top:45%;
-		left:45%;
-		height:50px;
-		width:50px;
-		position: absolute;
-	}
-	&:hover {
-		.b0 {
-			animation: pulse 1s infinite ease-in;
-		}
-		.b1 {
-			animation: pulse 2s infinite ease-in;
-		}
-		.b2 {
-			animation: pulse 2s infinite ease-in 1s;
-		}
-	}
-}
-
-
 .home {
+	//banner transition
 	[class*=nner] {
 		@include css3-prefix(border-radius, 10%);
 		transition:opacity 3s;
@@ -323,23 +269,13 @@ Profile
 		}
 	}
 
+	//skill bar transitions and design
 	[class^=site-bar] {
 		margin: $space 0;
 		width: 50%;
 
 		label {
 			font:1.2em/1 Verdana;
-		}
-
-		&:hover {
-			@for $i from 1 through 5 {
-				[class=test-bar]:nth-of-type(#{$i}) {
-					span {
-						width: $i * 20%;
-						transition:width 1s linear;
-					}
-				}
-			}	
 		}
 
 		[class=test-bar] {
@@ -352,7 +288,7 @@ Profile
 				&:nth-of-type(#{$i}) {
 					span {
 						width: $i * 10%;
-						transition:width 1s linear;
+						transition:width 1s ease-in;
 					}
 				}
 			}
@@ -362,9 +298,20 @@ Profile
 				height: 100%;
 				background: red;
 			}
-		}		
+		}
+		&:hover {
+			@for $i from 1 through 5 {
+				[class=test-bar]:nth-of-type(#{$i}) {
+					span {
+						width: $i * 20%;
+						transition:width 1s linear;
+					}
+				}
+			}	
+		}
 	}
 
+	//list transitions
 	>section {
 		&[class*=container] {
 			background: white;
@@ -401,6 +348,228 @@ Profile
 				li:nth-child(4) ~ li {
 					background: darken($col, 6);
 				}
+			}
+		}
+	}
+}
+
+//Playing with selectors, keyframes and transitions
+@keyframes pulse {
+	0%, 100% {
+		@include css3-prefix(opacity, 0.2);
+		height:50px;
+		width: 50px;
+		background: darkred;
+	}
+	30%, 70% {
+		top:39.8%;
+		left:42.5%;
+		height:100px;
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 0.8);
+	}
+	50% {
+		top:41.5%;
+		left:43%;
+		height:90px;
+		width: 90px;
+		background: lighten(darkred, 10%);
+		@include css3-prefix(opacity, 0.7);
+	}
+}
+@-webkit-keyframes pulse {
+	0%, 100% {
+		@include css3-prefix(opacity, 0.2);
+		height:50px;
+		width: 50px;
+		background: darkred;
+	}
+	30%, 70% {
+		top:39.8%;
+		left:42.5%;
+		height:100px;
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 0.8);
+	}
+	50% {
+		top:41.5%;
+		left:43%;
+		height:90px;
+		width: 90px;
+		background: lighten(darkred, 10%);
+		@include css3-prefix(opacity, 0.7);
+	}
+}
+@-moz-keyframes pulse {
+	0%, 100% {
+		@include css3-prefix(opacity, 0.2);
+		height:50px;
+		width: 50px;
+		background: darkred;
+	}
+	30%, 70% {
+		top:39.8%;
+		left:42.5%;
+		height:100px;
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 0.8);
+	}
+	50% {
+		top:41.5%;
+		left:43%;
+		height:90px;
+		width: 90px;
+		background: lighten(darkred, 10%);
+		@include css3-prefix(opacity, 0.7);
+	}
+}
+@-o-keyframes pulse {
+	0%, 100% {
+		height:50px;
+		width: 50px;
+		background: darkred;
+		@include css3-prefix(opacity, 0.2);
+	}
+	30%, 70% {
+		top:39.8%;
+		left:42.5%;
+		height:100px;
+		width: 100px;
+		background: red;
+		@include css3-prefix(opacity, 0.8);
+	}
+	50% {
+		top:41.5%;
+		left:43%;
+		height:90px;
+		width: 90px;
+		background: lighten(darkred, 10%);
+		@include css3-prefix(opacity, 0.7);
+	}
+}
+
+.ball {
+	@include css3-prefix(border-radius, 50%);
+	background: red;
+	top:45%;
+	left:45%;
+	height:50px;
+	width:50px;
+	position: absolute;
+}
+
+.contain {
+	position: relative;
+	height: 500px;
+	width: 100%;
+	background: #ccc;
+	@include css3-prefix(border-radius, 5%);
+
+	&:hover {
+		.ball:first-child:not(:only-child) {
+			@include css3-prefix(animation, pulse 1s infinite ease-in);
+		}
+		.ball:nth-child(2) {
+			@include css3-prefix(animation, pulse 2s infinite ease-in);
+		}
+		.ball:nth-child(3) {
+			@include css3-prefix(animation, pulse 2s infinite ease-in 1s);
+		}
+	}
+}
+
+.bx {
+	position: relative;
+	margin: $space 0;
+	transition:background 3s, height 5s;
+}
+.bx.active {
+	height:90px;
+	background: blue;
+	transition:background 3s, height 5s;
+}
+
+.hex-container {
+	margin: 20px 0 75px;
+}
+.hex-bar {
+	position: relative;
+	z-index:0;
+	text-align:center;
+
+	.hexagon {
+		height: 130px;
+		width: 125px;
+	    position: relative;
+		
+		&:after {
+		    content: '';
+		    width: 0;
+		    height: 0;
+		    position: absolute;
+		    top: 130px;
+		    left: 0;
+		    border-left: 62.5px solid transparent;
+		    border-right: 62.5px solid transparent;
+		    border-top: 40px solid #fc5e5e;
+		}
+
+		& + .hexagon {
+			position: absolute;
+			top:10px;
+			left:3px;
+			background: darkred;
+			z-index:-1;
+			@include rotate(-2deg);
+		}	
+	
+		span {
+			display: block;
+			font: 4em/1 garamond;
+			padding-top: 40%;
+		}
+	}
+
+	&:nth-child(odd) {
+		margin: 50px 0 0;
+		background: #fc5e5e;
+		.hexagon {
+			&:first-child {
+				background:#fc5e5e ;
+			}
+			&:first-child:after {
+				border-top-color:#fc5e5e ; 
+			}
+			& + .hexagon {
+				background: darkred;
+			}
+			& + .hexagon:after {
+				border-top-color:darkred;
+			}
+		}
+	}
+
+	&:nth-child(even) {
+		padding-left: 50px;
+		background: $scheme-3;
+		margin: 10px 0 75px;
+		z-index: -1;
+		.hexagon {
+			&:first-child {
+				background: $scheme-3;
+			}
+			&:first-child:after {
+				border-top-color: $scheme-3; 
+			}
+			& + .hexagon {
+				left: 52px;
+				background: darken($scheme-3, 20);
+			}
+			& + .hexagon:after {
+				border-top-color: darken($scheme-3, 20);
 			}
 		}
 	}
