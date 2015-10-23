@@ -258,6 +258,10 @@ Profile
 	}
 }
 
+
+//
+//START OF EXPERIMENTATION
+//
 .home {
 	//banner transition
 	[class*=nner] {
@@ -359,22 +363,19 @@ Profile
 		height:50px;
 		width: 50px;
 		background: darkred;
-		@include css3-prefix(opacity, 0.2);
-		top:50%;
+		@include css3-prefix(opacity, 0);
 	}
 	30%, 70% {
 		height:100px;
 		width: 100px;
 		background: red;
-		@include css3-prefix(opacity, 0.8);
-		top:45%;
+		@include css3-prefix(opacity, 0.5);
 	}
 	50% {
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
-		top:45.5%;
 	}
 }
 @-webkit-keyframes pulse {
@@ -382,22 +383,19 @@ Profile
 		height:50px;
 		width: 50px;
 		background: darkred;
-		@include css3-prefix(opacity, 0.2);
-		top:50%;
+		@include css3-prefix(opacity, 0);
 	}
 	30%, 70% {
 		height:100px;
 		width: 100px;
 		background: red;
-		@include css3-prefix(opacity, 0.8);
-		top:45%;
+		@include css3-prefix(opacity, 0.5);
 	}
 	50% {
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
-		top:45.5%;
 	}
 }
 @-moz-keyframes pulse {
@@ -405,22 +403,19 @@ Profile
 		height:50px;
 		width: 50px;
 		background: darkred;
-		@include css3-prefix(opacity, 0.2);
-		top:50%;
+		@include css3-prefix(opacity, 0);
 	}
 	30%, 70% {
 		height:100px;
 		width: 100px;
 		background: red;
-		@include css3-prefix(opacity, 0.8);
-		top:45%;
+		@include css3-prefix(opacity, 0.5);
 	}
 	50% {
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
-		top:45.5%;
 	}
 }
 @-o-keyframes pulse {
@@ -428,25 +423,21 @@ Profile
 		height:50px;
 		width: 50px;
 		background: darkred;
-		@include css3-prefix(opacity, 0.2);
-		top:50%;
+		@include css3-prefix(opacity, 0);
 	}
 	30%, 70% {
 		height:100px;
 		width: 100px;
 		background: red;
-		@include css3-prefix(opacity, 0.8);
-		top:45%;
+		@include css3-prefix(opacity, 0.5);
 	}
 	50% {
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
-		top:45.5%;
 	}
 }
-
 .ball {
 	@include css3-prefix(border-radius, 50%);
 	background: red;
@@ -454,11 +445,9 @@ Profile
 	width:50px;
 	position: absolute;
 	top:50%;
-	transform:translateY(-50%);
 	left:50%;
-	transform:translateX(-50%);
+	transform:translate(-50%, -50%);
 }
-
 .containa {
 	display: block;
 	margin: $space auto;
@@ -480,13 +469,8 @@ Profile
 		}
 	}
 	&:active {
-		.ball:first-child:not(:only-child) {
-			animation-play-state: paused;
-		}
-		.ball:nth-child(2) {
-			animation-play-state: paused;
-		}
-		.ball:nth-child(3) {
+		.ball:first-child:not(:only-child),
+		.ball ~ .ball {
 			animation-play-state: paused;
 		}
 	}
@@ -500,19 +484,18 @@ Profile
 	background: red;
 	position: absolute;
 	top:50%;
-	transform:translateY(-50%);
 	left:50%;
-	transform:translateX(-50%);
+	transform:translate(-50%, -50%);
 	transition:all 2s;
 }
 .bx.active:first-child {
-	top:45%;
+	top:50%;
 	height:100px;
 	transform:rotate(180deg);
 	transition:all 2s;
 }
 .bx.active + .bx.active {
-	left:47.5%;
+	left:47.75%;
 	width: 100px;
 	transform:rotate(180deg);
 	transition:all 2s;
@@ -607,4 +590,31 @@ Profile
 			}
 		}
 	}
+}
+
+.shadow-container {
+	position: relative;
+	height:200px;
+	width: 200px;
+	background: #ccc;
+	.shadow {
+		width: 75px;
+		height: 75px;
+		background: #FC5E5E;
+		@include css3-prefix(border-radius, 50%);
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%, -50%);
+	}
+	.shadow:before {
+		content:'';
+		width: 75px;
+		height: 75px;
+		background: darken(#FC5E5E, 10);
+		position: absolute;
+		top:-3px;
+		left:-3px;
+		@include css3-prefix(border-radius, 50%);
+	}	
 }
