@@ -78,27 +78,32 @@
 </div>
 
 <div class="containa">
-  <div class="ball bx">
+  <div class="bx">
+    
+  </div>
+  <div class="bx">
     
   </div>
 </div>
 
 <script>
   
-var bx = document.getElementsByClassName('bx')[0];
+var bx = document.getElementsByClassName('bx');
 var conty = document.getElementsByClassName('containa')[1];
 
-conty.className = conty.className + ' contain';
-
-bx.onmouseover = function() {
-  this.className = this.className + ' active';
-}
-bx.onmouseout = function() {
-  if (this.className.indexOf('active')) {
-    this.className = this.className.replace('active','').trim();
-  };
-}
-
+  conty.onmouseover = function() {
+    for (var i = bx.length - 1; i >= 0; i--) {
+      bx[i].className = bx[i].className + ' active';
+    }
+  }
+  conty.onmouseout = function() {
+    for (var i = bx.length - 1; i >= 0; i--) {
+      if (bx[i].className.indexOf('active')) {
+        bx[i].className = bx[i].className.replace('active','').trim();
+      };
+    };
+  }
+  
   var stringUn = "This is a long string of text!";
   console.log(stringUn.toLowerCase());
   console.log(stringUn.toUpperCase());
