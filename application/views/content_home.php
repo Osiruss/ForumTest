@@ -57,7 +57,7 @@
     </div>
   </section>
 
-  <section class="contain">
+  <section class="containa">
     <div class="ball b0">
       
     </div>
@@ -77,7 +77,7 @@
   </section>
 </div>
 
-<div class="conty">
+<div class="containa">
   <div class="ball bx">
     
   </div>
@@ -86,7 +86,7 @@
 <script>
   
 var bx = document.getElementsByClassName('bx')[0];
-var conty = document.getElementsByClassName('conty')[0];
+var conty = document.getElementsByClassName('containa')[1];
 
 conty.className = conty.className + ' contain';
 

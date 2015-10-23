@@ -356,74 +356,71 @@ Profile
 //Playing with selectors, keyframes and transitions
 @keyframes pulse {
 	0%, 100% {
-		@include css3-prefix(opacity, 0.2);
 		height:50px;
 		width: 50px;
 		background: darkred;
+		@include css3-prefix(opacity, 0.2);
+		top:50%;
 	}
 	30%, 70% {
-		top:39.8%;
-		left:42.5%;
 		height:100px;
 		width: 100px;
 		background: red;
 		@include css3-prefix(opacity, 0.8);
+		top:45.5%;
 	}
 	50% {
-		top:41.5%;
-		left:43%;
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
+		top:45.5%;
 	}
 }
 @-webkit-keyframes pulse {
 	0%, 100% {
-		@include css3-prefix(opacity, 0.2);
 		height:50px;
 		width: 50px;
 		background: darkred;
+		@include css3-prefix(opacity, 0.2);
+		top:50%;
 	}
 	30%, 70% {
-		top:39.8%;
-		left:42.5%;
 		height:100px;
 		width: 100px;
 		background: red;
 		@include css3-prefix(opacity, 0.8);
+		top:45.5%;
 	}
 	50% {
-		top:41.5%;
-		left:43%;
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
+		top:45.5%;
 	}
 }
 @-moz-keyframes pulse {
 	0%, 100% {
-		@include css3-prefix(opacity, 0.2);
 		height:50px;
 		width: 50px;
 		background: darkred;
+		@include css3-prefix(opacity, 0.2);
+		top:50%;
 	}
 	30%, 70% {
-		top:39.8%;
-		left:42.5%;
 		height:100px;
 		width: 100px;
 		background: red;
 		@include css3-prefix(opacity, 0.8);
+		top:45.5%;
 	}
 	50% {
-		top:41.5%;
-		left:43%;
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
+		top:45.5%;
 	}
 }
 @-o-keyframes pulse {
@@ -432,39 +429,42 @@ Profile
 		width: 50px;
 		background: darkred;
 		@include css3-prefix(opacity, 0.2);
+		top:50%;
 	}
 	30%, 70% {
-		top:39.8%;
-		left:42.5%;
 		height:100px;
 		width: 100px;
 		background: red;
 		@include css3-prefix(opacity, 0.8);
+		top:45.5%;
 	}
 	50% {
-		top:41.5%;
-		left:43%;
 		height:90px;
 		width: 90px;
 		background: lighten(darkred, 10%);
 		@include css3-prefix(opacity, 0.7);
+		top:45.5%;
 	}
 }
 
 .ball {
 	@include css3-prefix(border-radius, 50%);
 	background: red;
-	top:45%;
-	left:45%;
 	height:50px;
 	width:50px;
 	position: absolute;
+	top:50%;
+	transform:translateY(-50%);
+	left:50%;
+	transform:translateX(-50%);
 }
 
-.contain {
+.containa {
+	display: block;
+	margin: 0 auto;
+	text-align:center;
 	position: relative;
 	height: 500px;
-	width: 100%;
 	background: #ccc;
 	@include css3-prefix(border-radius, 5%);
 
@@ -494,6 +494,13 @@ Profile
 
 .hex-container {
 	margin: 20px 0 75px;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
 }
 .hex-bar {
 	position: relative;
