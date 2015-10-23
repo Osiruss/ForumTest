@@ -129,42 +129,130 @@ console.log(stringUn.len());
   <div class="hex-bar">
     <div class="hexagon">
       <span>1</span>
+      <div class="trii"></div>
     </div>
     <div class="hexagon">
+      <span>3</span>
+      <div class="trii"></div>
     </div>
   </div>
 
   <div class="hex-bar">
     <div class="hexagon">
       <span>2</span>
+      <div class="trii"></div>
     </div>
     <div class="hexagon">
+      <span>3</span>
+      <div class="trii"></div>
     </div>
   </div>
 
   <div class="hex-bar">
     <div class="hexagon">
       <span>3</span>
+      <div class="trii"></div>
     </div>
     <div class="hexagon">
+      <span>3</span>
+      <div class="trii"></div>
     </div>
   </div>
 
   <div class="hex-bar">
     <div class="hexagon">
       <span>4</span>
+      <div class="trii"></div>
     </div>
     <div class="hexagon">
+      <span>3</span>
+      <div class="trii"></div>
     </div>
   </div>
 
 </div>
 
-<div class="shadow-container">
-  <div class="shadow">
-    
+
+<div class="pure-hex-container">
+  <div class="pure-hex" style="background-image: url('http://placekitten.com/200/305');">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>1</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>2</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>3</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>4</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>5</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>6</span>
+    </div>
+    <div class="tri">
+      
+    </div>
+  </div>
+  <div class="pure-hex">
+    <div class="tri">
+      
+    </div>
+    <div class="sq">
+      <span>7</span>
+    </div>
+    <div class="tri">
+      
+    </div>
   </div>
 </div>
+
 
 <?php 
 
