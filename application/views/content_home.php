@@ -57,9 +57,104 @@
     </div>
   </section>
 
-  <section class="cont">
-    <div class="ball">
+  <section class="contain">
+    <div class="ball b0">
       
     </div>
+    <div class="ball b1">
+      
+    </div>
+    <div class="ball b2">
+      
+    </div>
+    <div class="ball b3">
+      
+    </div>
+    <div class="ball b4">
+      
+    </div>
+
   </section>
 </div>
+
+<div class="conty">
+  <div class="ball bx">
+    
+  </div>
+</div>
+
+<script>
+  
+var bx = document.getElementsByClassName('bx')[0];
+var conty = document.getElementsByClassName('conty')[0];
+
+conty.className = conty.className + ' contain';
+
+bx.onmouseover = function() {
+  this.className = this.className + ' active';
+}
+bx.onmouseout = function() {
+  if (this.className.indexOf('active')) {
+    this.className = this.className.replace('active','').trim();
+  };
+}
+
+  var stringUn = "This is a long string of text!";
+  console.log(stringUn.toLowerCase());
+  console.log(stringUn.toUpperCase());
+  console.log(stringUn.slice(1, 4)+' - takes characters from index 1 till index 4');
+  console.log(stringUn.substr(0, 4)+' - takes 4 characters starting from index 0');
+  console.log(stringUn.replace("text", "characters")+' - "text" has been replaced with "characters"');
+  console.log(stringUn.indexOf("is")+' - the first "is" appears at this index');
+  console.log(stringUn.lastIndexOf("is")+' - the last "is" appears at this index');
+  console.log(stringUn.charAt(stringUn.length-1)+' - this character is at index 0');
+
+  console.log(stringUn.indexOf(['a','e','i','o','u']));
+
+String.prototype.len = function() {
+  return this.length;
+}
+
+console.log(stringUn.len());
+
+</script>
+
+<div class="hex-container">
+
+  <div class="hex-bar">
+    <div class="hexagon">
+      <span>1</span>
+    </div>
+    <div class="hexagon">
+    </div>
+  </div>
+
+  <div class="hex-bar">
+    <div class="hexagon">
+      <span>2</span>
+    </div>
+    <div class="hexagon">
+    </div>
+  </div>
+
+  <div class="hex-bar">
+    <div class="hexagon">
+      <span>3</span>
+    </div>
+    <div class="hexagon">
+    </div>
+  </div>
+
+  <div class="hex-bar">
+    <div class="hexagon">
+      <span>4</span>
+    </div>
+    <div class="hexagon">
+    </div>
+  </div>
+
+</div>
+
+<?php 
+
+ ?>
