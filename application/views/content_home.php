@@ -33,47 +33,36 @@
   <section class="site-bars">
     <label>Bar</label>
     <div class="test-bar">
-      <span></span>
+      <span style='width:80%;'></span>
     </div>
     
     <label>Bar</label>
     <div class="test-bar">
-      <span></span>
+      <span style='width:80%;'></span>
     </div>
     
     <label>Bar</label>
     <div class="test-bar">
-      <span></span>
+      <span style='width:80%;'></span>
     </div>
     
     <label>Bar</label>
     <div class="test-bar">
-      <span></span>
+      <span style='width:80%;'></span>
     </div>
     
     <label>Bar</label>
     <div class="test-bar">
-      <span></span>
+      <span style='width:80%;'></span>
     </div>
   </section>
 
   <section class="containa">
-    <div class="ball b0">
-      
-    </div>
-    <div class="ball b1">
-      
-    </div>
-    <div class="ball b2">
-      
-    </div>
-    <div class="ball b3">
-      
-    </div>
-    <div class="ball b4">
-      
-    </div>
-
+    <div class="ball b0"></div>
+    <div class="ball b1"></div>
+    <div class="ball b2"></div>
+    <div class="ball b3"></div>
+    <div class="ball b4"></div>
   </section>
 </div>
 
@@ -175,81 +164,53 @@ console.log(stringUn.len());
 
 <div class="pure-hex-container">
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>1</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>2</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>3</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>4</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>5</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>6</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
   <div class="pure-hex">
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
     <div class="sq">
       <span>7</span>
     </div>
-    <div class="tri">
-      
-    </div>
+    <div class="tri"></div>
   </div>
 </div>
 

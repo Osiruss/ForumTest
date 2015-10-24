@@ -264,7 +264,7 @@ Profile
 //
 .home {
 	//banner transition
-	[class*=nner] {
+	[class*=nner], .banner {
 		@include css3-prefix(border-radius, 10%);
 		transition:opacity 3s;
 		&:hover {
@@ -274,7 +274,7 @@ Profile
 	}
 
 	//skill bar transitions and design
-	[class^=site-bar] {
+	.site-bar, [class^=site-bar] {
 		margin: $space 0;
 		width: 50%;
 
@@ -282,45 +282,26 @@ Profile
 			font:1.2em/1 Verdana;
 		}
 
-		[class=test-bar] {
+		 [class=test-bar], .test-bar {
 			height:5px;
 			width:100%;
 			background: white;
 			margin-bottom: $space;
 
-			@for $i from 1 through 5 {
-				&:nth-of-type(#{$i}) {
-					span {
-						width: $i * 10%;
-						transition:width 1s ease-in;
-					}
-				}
-			}
-
-			span:only-child {
+			span {
 				display: block;
 				height: 100%;
 				background: #FC5E5E;
 			}
 		}
-		&:hover {
-			@for $i from 1 through 5 {
-				[class=test-bar]:nth-of-type(#{$i}) {
-					span {
-						width: $i * 20%;
-						transition:width 1s linear;
-					}
-				}
-			}	
-		}
 	}
 
 	//list transitions
 	>section {
-		&[class*=container] {
+		&[class*=container], .container {
 			background: white;
 		}
-		ul:only-child {
+		ul {
 			li {
 				padding:$space;
 				font: 1.3em/1 garamond;
@@ -346,10 +327,10 @@ Profile
 				li:first-child + li + li {
 					background: $col;
 				}
-				li:nth-child(4) {
+				li:first-child + li + li + li{
 					background: darken($col, 3);
 				}
-				li:nth-child(4) ~ li {
+				li:first-child + li + li + li + li{
 					background: darken($col, 6);
 				}
 			}
@@ -600,7 +581,10 @@ Profile
 	overflow: hidden;
 	display: inline-block;
 	margin:-4% 1%;
-	&:nth-child(5), &:nth-child(6), &:nth-child(7) {
+
+	//n = every number from 0
+	//so: 0+5=5, 1+5=6, 2+5=7, 3+5=8, etc. for however many elements
+	&:nth-child(n+5) {
 		transform:translate(55%, -22%);
 	}
 	.sq {
@@ -657,26 +641,15 @@ Profile
 	//initialises flexbox
 	@include flexbox();
 
-	//sets wrap functionality of items 
-	//[wrap, nowrap, wrap-reverse]
-	@include css3-prefix(flex-wrap, wrap);
-
-	//sets direction of items 
-	//[row, row-reverse, column, column-reverse]
-	@include css3-prefix(flex-direction, row);
-
 	//sets flow of items (shorthand for direction and wrap)
-	//@include css3-prefix(flex-flow, row wrap);
+	@include css3-prefix(flex-flow, row wrap);
 	
-	//aligns content (regardless of direction/context (ltr/rtl))
 	//[flex-start, flex-end, center, space-between, space-around]
 	@include css3-prefix(justify-content, flex-start);
 
-	//sets what is esentially justify-content but for the cross axis
 	//[flex-start, flex-end, stretch, center, baseline]
 	@include css3-prefix(align-items, stretch);
 
-	//when there is space on the cross axis, align-content manages said space
 	//[flex-start, flex-end, center, stretch, space-between, space-around]
 	@include css3-prefix(align-content, stretch);
 
@@ -703,7 +676,7 @@ Profile
 		}
 
 		//determines shrinking if no excess space
-		//[0, 1] 1 - default, 0 - no shrinking
+		//[0, 1, +:num] 1 - default, 0 - no shrinking
 		&:nth-child(6) {
 			@include css3-prefix(flex-shrink, 0);
 		}
@@ -749,25 +722,26 @@ Profile
 	background: #999;
 
 	//sets flex direction and wrap
-	flex-flow: row wrap;
+	@include css3-prefix(flex-flow, row wrap);
 
 	//justifies items on base axis 
 	//(if row think text-align, if column think vertical-align)
-	justify-content: center;
+	@include css3-prefix(justify-content, center);
+    -ms-flex-pack: center;
 
-	//justifies individual items on cross axis
+	//aligns flex items along the cross axis of the current line
 	//(if row think top:50%/translate(0, -50%), if column think text-align)
 	//no space-between/around
 	//if align-content is anything other than stretch, then this has no effect
 	//stretch - default (only works with min-height/no height. if fixed, stretch results in fixed height)
-	align-items: flex-end;
+	align-items: center;
 
-	//justifies individual lines 
+	//aligns lines of flex items (if multi-line) along the cross axis	
 	//(if row, think vertical-align, if column, think text-align/float)
 	//overrides align-items
 	//does nothinng if nowrap
 	//stretch - default
-	align-content: flex-start;
+	align-content: center;
 
 	.child {
 		position: relative;
@@ -776,7 +750,7 @@ Profile
 		min-height: 100px;
 		margin: 1%;
 		padding: 5%;
-		
+
 		@for $i from 1 through 10 {
 			&:nth-child(#{$i}) {
 				background: darken(#F0F0F0, $i * 2%);
