@@ -17,21 +17,21 @@ class MY_Model extends CI_Model {
 	 * @param  boolean $single used to specify if single result or multiple
 	 * @return object          data
 	 */
-	public function get($id = null, $single = false){
+	public function get($id = null, $single = null) {
 		if ($id != null) {
 			$filter = $this->_primary_filter;
 			$id = $filter($id);
-			$this->db->where($this->_primary_key , $id);
+			$this->db->where($this->_primary_key, $id);
 			$method = 'row';
-		} else  if ($single == true) {
-			 $method = 'row';
+		} else if ($single == true) {
+			$method = 'row';
 		} else {
-			 $method = 'result';
+			$method = 'result';
 		}
 
 		return $this->db->get($this->_table_name)->$method();
 	}
-
+	
 	/**
 	 * Get data from table by $where
 	 * @param  array  $where  specify what to search for in table

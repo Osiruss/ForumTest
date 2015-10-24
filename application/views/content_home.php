@@ -174,7 +174,7 @@ console.log(stringUn.len());
 
 
 <div class="pure-hex-container">
-  <div class="pure-hex" style="background-image: url('http://placekitten.com/200/305');">
+  <div class="pure-hex">
     <div class="tri">
       
     </div>
@@ -253,7 +253,18 @@ console.log(stringUn.len());
   </div>
 </div>
 
-
+<div class="parento">
+  <div class="child"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non incidunt provident a reiciendis, accusamus voluptate.</span></div>
+  <div class="child"><span>Et nisi inventore commodi nemo, maiores, vel nulla, amet esse aspernatur sapiente aperiam maxime provident.</span></div>
+  <div class="child"><span>Obcaecati culpa, fugiat quaerat atque delectus explicabo doloribus tempore ullam veritatis iure, fugit vel, porro.</span></div>
+  <div class="child"><span>Soluta nam fugiat voluptas deleniti vel nulla minus, aliquid, cumque beatae rem, impedit magni ut!</span></div>
+  <div class="child"><span>Inventore quis aliquam repellendus, delectus, fuga modi enim, molestias ullam, a maiores quo numquam sed!</span></div>
+  <div class="child"><span>Nam inventore atque id accusamus quasi aliquam, consectetur mollitia ratione explicabo laboriosam earum quia vitae.</span></div>
+  <div class="child"><span>Reiciendis suscipit quia, culpa rerum voluptatum commodi dignissimos! Amet, autem tempora veniam laboriosam ducimus. Amet!</span></div>
+  <div class="child"><span>Sed facere, ut corporis cupiditate iusto, veniam! Vero error dolor consequuntur reprehenderit culpa sequi animi?</span></div>
+  <div class="child"><span>Omnis modi recusandae aperiam nemo amet, officia at nostrum tempora ea minima? Ipsum, quae, iste!</span></div>
+  <div class="child"><span>Quibusdam magni optio animi, soluta perspiciatis consequatur numquam. Odio dolore voluptas sed enim quasi, facilis!</span></div>
+</div>
 <?php 
 
  ?>
